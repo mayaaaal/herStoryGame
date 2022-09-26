@@ -19,6 +19,7 @@ body {
   background-color: #f2f2f2;
   font-family: "RobotoDraft", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
+  margin: 0%;
 }
 
 * {
@@ -39,8 +40,9 @@ p {
 /* End Non-Essential  */
 
 .property-card {
+  margin: 20px;
   height: 18em;
-  width: 14em;
+  width: 13.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,14 +58,32 @@ p {
   overflow: hidden;
   -webkit-box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
   box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  flex-shrink: 0;
 }
+
+.wrong {
+  -webkit-box-shadow: 15px 15px 27px #fc0410, -15px -15px 27px #fc0303;
+  box-shadow: 15px 15px 27px #fc0303, -15px -15px 27px #f60202;
+}
+
+.right {
+  -webkit-box-shadow: 15px 15px 27px rgb(33, 252, 4),
+    -15px -15px 27px rgb(33, 252, 4);
+  box-shadow: 15px 15px 27px rgb(33, 252, 4), -15px -15px 27px rgb(33, 252, 4);
+}
+
+#timeLine .property-card {
+  height: 14.4em;
+  width: 10.8em;
+}
+
 /* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
 
 /* Top Half of card, image. */
 
 .property-image img {
-  height: 18em;
-  width: 14em;
+  height: 100%;
+  /* width: 13.5em; */
   position: Absolute;
   top: 0px;
   -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -71,12 +91,22 @@ p {
   transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+.property-description h2 {
+  margin-bottom: 0px;
+  margin-top: 11px;
+  white-space: pre-wrap;
+}
+.property-description p {
+  margin-top: 3px;
+  white-space: pre-wrap;
+}
+
 /* Bottom Card Section */
 
 .property-description {
   background-color: #fafafc;
-  height: 0em;
-  width: 14em;
+  height: 0px;
+  width: 100%;
   position: absolute;
   bottom: 0em;
   -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -140,6 +170,7 @@ img {
 .draggable.dragging {
   opacity: 0.5;
 }
+
 #timelineCont {
   width: 100vw;
   overflow-x: auto;
@@ -174,12 +205,16 @@ img {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 40px;
-  flex-shrink: no;
+  flex-shrink: 0;
 
   overflow-y: hidden;
   white-space: nowrap;
+}
+
+#mesCards .property-card:hover img {
+  height: 28em;
 }
 
 .red {
