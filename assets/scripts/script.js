@@ -5,6 +5,8 @@ let femmes = [
     nom: "Greta Thunberg",
     phrase: "Une militante écologiste suédoise",
     dateNaissance: "01/03/2003",
+    hint1: "hint1",
+    hint2: "hint2",
   },
   {
     id: "2",
@@ -12,7 +14,9 @@ let femmes = [
     nom: "Anne Frank",
     phrase:
       "Une adolescente allemande connue pour avoir écrit un journal intime",
-    dateNaissance: "06/12/1989",
+    dateNaissance: "06/12/1929",
+    hint1: "hint1",
+    hint2: "hint2",
   },
   {
     id: "3",
@@ -20,6 +24,8 @@ let femmes = [
     nom: "Rosa Parks",
     phrase: "La mère du mouvement des droits civiques",
     dateNaissance: "02/04/1913",
+    hint1: "hint1",
+    hint2: "hint2",
   },
   {
     id: "4",
@@ -27,6 +33,8 @@ let femmes = [
     nom: "Hatchepsout",
     phrase: "une reine de l'Égypte antique qui deviendra pharaon",
     dateNaissance: "1/1/1000",
+    hint1: "hint1",
+    hint2: "hint2",
   },
   {
     id: "5",
@@ -43,6 +51,8 @@ let femmes = [
     phrase:
       " reine du royaume de Ndongo et du royaume de Matamba dans l'actuel Angola",
     dateNaissance: "01/01/1583 ",
+    hint1: "hint1",
+    hint2: "hint2",
   },
   {
     id: "7",
@@ -51,6 +61,28 @@ let femmes = [
     phrase:
       " reine du royaume de Ndongo et du royaume de Matamba dans l'actuel Angola",
     dateNaissance: "08/26/1918 ",
+    hint1: "hint1",
+    hint2: "hint2",
+  },
+
+  {
+    id: "8",
+    img: "https://images.squarespace-cdn.com/content/v1/5cd9fda69d41495d2b2eb614/1591360447957-I666ER8FVOWYLOUF6XC5/neila.jpg",
+    nom: "Pina Bausch",
+    phrase: "une danseuse et chorégraphe allemande",
+    dateNaissance: "07/27/1940 ",
+    hint1: "hint1",
+    hint2: "hint2",
+  },
+
+  {
+    id: "9",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Coccinelle_%28cropped%29.jpg/300px-Coccinelle_%28cropped%29.jpg",
+    nom: "Coccinelle",
+    phrase: "C'est l'une des premières femmes trans connues du grand public.",
+    dateNaissance: "08/23/1921 ",
+    hint1: "hint1",
+    hint2: "hint2",
   },
 ];
 
@@ -76,10 +108,10 @@ function shuffle(array) {
 
 shuffle(femmes);
 for (let i = 0; i < femmes.length; i++) {
-  CreerCard(femmes[i]);
+  CreerCard(femmes[i], i);
 }
 
-function CreerCard(femmes) {
+function CreerCard(femmes, index) {
   // formateur.img -> pour obtenir l'image du formateur renseigné en paramètre
   // formateur.nom -> pour obtenir le nom du formateur renseigné en paramètre
   // formateur.dateNaissance -> pour obtenir la date de naissance du formateur renseigné en paramètre
@@ -87,7 +119,7 @@ function CreerCard(femmes) {
     
     <div class="property-card draggable card" year="${Date.parse(
       femmes.dateNaissance
-    )}" id="maCard${femmes.id}" draggable = 'true'">
+    )}" id="maCard${femmes.id}" index ="${index}" draggable = 'true'">
                   
                   <div class="property-image">
                       <img src="${femmes.img}"/>
@@ -108,13 +140,17 @@ function CreerCard(femmes) {
 const draggables = document.querySelectorAll(".draggable");
 const containers = document.querySelectorAll(".dropZone");
 let timeline = document.getElementById("timeLine");
+let tries = 0;
 
 draggables.forEach((draggable) => {
   draggable.addEventListener("dragstart", () => {
     draggable.classList.add("dragging");
-    timeline.classList.remove("green");
+    draggable.classList.remove("wrong");
+    draggable.classList.remove("right");
 
-    mesCards.classList.remove("red");
+    // timeline.classList.remove("green");
+
+    // mesCards.classList.remove("red");
   });
   draggable.addEventListener("dragend", (e) => {
     let elementBe = e.target.previousElementSibling
@@ -140,28 +176,29 @@ draggables.forEach((draggable) => {
         (elementAf === null && elementTa > elementBe)
       ) {
         draggable.classList.remove("dragging");
-        mesCards.classList.remove("red");
+        draggable.classList.remove("wrong");
 
-        timeline.classList.add("green");
+        draggable.classList.add("right");
+        tries = 0;
       } else {
-        document.getElementById("mesCards").prepend(draggable);
-        timeline.classList.remove("green");
-        mesCards.classList.add("red");
+        draggable.classList.remove("right");
+        draggable.classList.add("wrong");
+        triesHandler(draggable);
       }
     } else if (elementTa > elementBe && elementTa < elementAf) {
       console.log("in center");
       draggable.classList.remove("dragging");
-      mesCards.classList.remove("red");
+      draggable.classList.remove("wrong");
 
-      timeline.classList.add("green");
+      draggable.classList.add("right");
+      tries = 0;
     } else {
       console.log("no place");
       let mesCards = document.getElementById("mesCards");
 
-      mesCards.prepend(draggable);
-      timeline.classList.remove("green");
+      draggable.classList.remove("right");
 
-      mesCards.classList.add("red");
+      triesHandler(draggable);
     }
   });
 });
@@ -196,4 +233,44 @@ function getDragAfterElement(container, X) {
     },
     { Offset: Number.NEGATIVE_INFINITY }
   ).element;
+}
+
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+
+const openModal = function (hint) {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  const message = document.querySelector(".message");
+  message.innerText = hint;
+};
+
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});
+
+function triesHandler(card) {
+  tries += 1;
+  if (tries < 3) {
+    let index = parseInt(card.getAttribute("index"));
+    console.log(femmes[index]);
+    let hint = tries < 2 ? femmes[index].hint1 : femmes[index].hint2;
+
+    document.getElementById("mesCards").prepend(card);
+    openModal(hint);
+  } else {
+    document.querySelector(".lost").prepend(card);
+    tries = 0;
+  }
 }
