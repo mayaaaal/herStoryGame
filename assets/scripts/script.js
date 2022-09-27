@@ -1,7 +1,7 @@
 let femmes = [
   {
     id: "1",
-    img: "./assets/img/thamber-(1).png",
+    img: "../assets/images/thamber-(1).png",
     nom: "Greta Thunberg",
     phrase: "Une militante écologiste suédoise",
     dateNaissance: "01/03/2003",

@@ -20,11 +20,13 @@ body {
   font-family: "RobotoDraft", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0%;
+  background-color: rgb(48, 15, 61);
 }
 
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
 h5 {
@@ -56,8 +58,8 @@ p {
   transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   border-radius: 16px;
   overflow: hidden;
-  -webkit-box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
-  box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  -webkit-box-shadow: 5px 5px 7px #bb86fc70, -5px -5px 7px #bb86fc54;
+  box-shadow: 5px 5px 7px #bb86fc70, -5px -5px 7px #bb86fc54;
   flex-shrink: 0;
 }
 
@@ -183,6 +185,14 @@ p {
 #mesCards .card {
   display: none;
 }
+.card:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  border-left: 1px solid yellow;
+  height: 20px;
+  transform: translateY(-100%);
+}
 
 #mesCards .card:first-child {
   display: block;
@@ -207,9 +217,8 @@ p {
     color: rgb(26, 24, 24);
   } */
 
-img {
+.card img {
   width: 100%;
-  height: 220px;
 
   object-fit: cover;
   /* filter: grayscale(1) brightness(1.5); */
@@ -250,13 +259,14 @@ img {
     } */
 
 #timeLine {
-  height: 300px;
+  height: 290px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 100px;
   flex-shrink: 0;
+  border-top: 1px solid yellow;
 
   overflow-y: hidden;
   white-space: nowrap;
@@ -324,4 +334,36 @@ img {
 
 .lost {
   display: none;
+}
+
+.backImg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+img#img1 {
+  left: 85%;
+  transform: rotatey(180deg);
+}
+
+img#img2 {
+  left: 70%;
+}
+
+img#img3 {
+  left: 60%;
+}
+
+img#img4 {
+  left: 75%;
+}
+
+header h2 {
+  position: absolute;
+  color: azure;
+  left: 3%;
+  font-weight: bold;
+  font-size: 38px;
+  top: 0%;
 }
