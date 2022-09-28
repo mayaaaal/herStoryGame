@@ -89,12 +89,12 @@ let femmes = [
     id: "10",
     img: "../assets/images/baya.png",
     nom: "Baya",
-    phrase: "Peintre autodidacte algérienne, surréaliste et naïve, a inspiré Picasso et Matisse",
+    phrase:
+      "Peintre autodidacte algérienne, surréaliste et naïve, a inspiré Picasso et Matisse",
     dateNaissance: "12/12/1931 ",
     hint1: "hint1",
     hint2: "hint2",
   },
-
 ];
 
 function shuffle(array) {
@@ -285,3 +285,21 @@ function triesHandler(card) {
     tries = 0;
   }
 }
+
+$(document).ready(function () {
+  $("#img7").on("mouseover", function () {
+    let startLeft = $(this).css("left");
+    let windowLeft = window.innerWidth;
+    $(this).animate(
+      {
+        left: "-250px",
+      },
+      1300,
+      function () {
+        console.log("finished first animation");
+        $(this).css("left", windowLeft + "px");
+        $(this).animate({ left: startLeft }, 1300);
+      }
+    );
+  });
+});

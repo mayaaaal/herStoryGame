@@ -23,6 +23,7 @@ body {
   /* background: rgb(121,9,86);
 background: linear-gradient(180deg, rgba(121,9,86,1) 0%, rgba(73,9,121,1) 50%, rgba(48,15,61,1) 100%); */
   background-color: #300f3d;
+  overflow: hidden;
 }
 
 * {
@@ -180,21 +181,26 @@ p {
   display: flex;
   flex-direction: row;
   /* flex-wrap: wrap; */
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 40px;
+  position: absolute;
+  left: 50%;
+  margin-left: -6.75em;
+  bottom: 0;
+  z-index: 2;
 }
 
 #mesCards .card {
   display: none;
 }
-.card:before {
+/* .card:before {
   content: "";
   position: absolute;
   left: 50%;
   border-left: 1px solid yellow;
   height: 20px;
   transform: translateY(-100%);
-}
+} */
 
 #mesCards .card:first-child {
   display: block;
@@ -265,13 +271,18 @@ p {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+
   margin-top: 100px;
   flex-shrink: 0;
   border-top: 1px solid yellow;
 
   overflow-y: hidden;
   white-space: nowrap;
+}
+#timeLine::before,
+#timeLine::after {
+  content: "";
+  margin: auto;
 }
 
 #mesCards .property-card:hover img {
