@@ -10,7 +10,7 @@ let femmes = [
   },
   {
     id: "2",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Anne_Frank_passport_photo%2C_May_1942.jpg/1024px-Anne_Frank_passport_photo%2C_May_1942.jpg",
+    img: "../assets/images/anne.png",
     nom: "Anne Frank",
     phrase:
       "Une adolescente allemande connue pour avoir écrit un journal intime",
@@ -29,7 +29,7 @@ let femmes = [
   },
   {
     id: "4",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/WLANL_-_koopmanrob_-_Maat-ka-Re_Hatsjepsoet_%28RMO%29.jpg/280px-WLANL_-_koopmanrob_-_Maat-ka-Re_Hatsjepsoet_%28RMO%29.jpg",
+    img: "../assets/images/hatchepsut.png",
     nom: "Hatchepsout",
     phrase: "une reine de l'Égypte antique qui deviendra pharaon",
     dateNaissance: "1/1/1000",
