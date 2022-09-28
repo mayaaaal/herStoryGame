@@ -20,10 +20,20 @@ body {
   font-family: "RobotoDraft", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0%;
-  /* background: rgb(121,9,86);
-background: linear-gradient(180deg, rgba(121,9,86,1) 0%, rgba(73,9,121,1) 50%, rgba(48,15,61,1) 100%); */
+  /* background: rgb(121, 9, 86);
+  background: linear-gradient(
+    180deg,
+    rgba(121, 9, 86, 1) 0%,
+    rgba(73, 9, 121, 1) 50%,
+    rgba(48, 15, 61, 1) 100%
+  ); */
   background-color: #300f3d;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 * {
@@ -66,7 +76,7 @@ p {
   flex-shrink: 0;
 }
 
-.wrong {
+.wrong .card {
   animation: pulseW 4s;
 }
 
@@ -96,7 +106,7 @@ p {
   }
 }
 
-.right {
+.right .card {
   animation: pulseR 4s;
 }
 
@@ -190,19 +200,24 @@ p {
   z-index: 2;
 }
 
-#mesCards .card {
+#mesCards .draggable {
   display: none;
 }
-/* .card:before {
+
+.draggable {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+#timeLine .draggable::before {
   content: "";
   position: absolute;
   left: 50%;
   border-left: 1px solid yellow;
   height: 20px;
-  transform: translateY(-100%);
-} */
+}
 
-#mesCards .card:first-child {
+#mesCards .draggable:first-child {
   display: block;
 }
 
@@ -237,9 +252,18 @@ p {
   opacity: 0.5;
 }
 
-#timelineCont {
+/* #timelineCont {
   width: 100vw;
   overflow-x: auto;
+} */
+
+#timelineCont {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+
+  user-select: none;
+  cursor: pointer;
 }
 
 /* #timeLine {
@@ -276,7 +300,6 @@ p {
   flex-shrink: 0;
   border-top: 1px solid yellow;
 
-  overflow-y: hidden;
   white-space: nowrap;
 }
 #timeLine::before,
@@ -387,9 +410,32 @@ img#img7 {
 
 header h2 {
   position: absolute;
-  color: azure;
+  color: rgb(255, 240, 254);
   left: 3%;
   font-weight: bold;
   font-size: 38px;
   top: 0%;
+}
+
+div.dateDiv {
+  display: none;
+}
+
+#timeLine .right div.dateDiv {
+  display: block;
+  position: absolute;
+  top: -25px;
+  color: yellow;
+}
+/* #timeLine::before {
+  content: "";
+  border-top: 1px solid yellow;
+  width: 100vw;
+  position: absolute;
+} */
+
+#timelineCont.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
 }

@@ -123,12 +123,18 @@ for (let i = 0; i < femmes.length; i++) {
 }
 
 function CreerCard(femmes, index) {
+  let date = new Date(femmes.dateNaissance);
+  let year = date.getFullYear();
   // formateur.img -> pour obtenir l'image du formateur renseigné en paramètre
   // formateur.nom -> pour obtenir le nom du formateur renseigné en paramètre
   // formateur.dateNaissance -> pour obtenir la date de naissance du formateur renseigné en paramètre
   $("#mesCards").append(`
-    
-    <div class="property-card draggable card" year="${Date.parse(
+  
+    <div class="draggable" index ="${index}" year="${Date.parse(
+    femmes.dateNaissance
+  )}">
+  <div class="dateDiv">${year}</div>
+    <div class="property-card card" year="${Date.parse(
       femmes.dateNaissance
     )}" id="maCard${femmes.id}" index ="${index}" draggable = 'true'">
                   
@@ -141,6 +147,7 @@ function CreerCard(femmes, index) {
                       <!--<p>${femmes.dateNaissance}</p>-->
                       </div>
               
+                  </div>
                   </div>
                   </div>
                  
@@ -164,12 +171,13 @@ draggables.forEach((draggable) => {
     // mesCards.classList.remove("red");
   });
   draggable.addEventListener("dragend", (e) => {
-    let elementBe = e.target.previousElementSibling
-      ? parseInt(e.target.previousElementSibling.getAttribute("year"))
+    let target = e.currentTarget;
+    let elementBe = target.previousElementSibling
+      ? parseInt(target.previousElementSibling.getAttribute("year"))
       : null;
-    let elementTa = parseInt(e.target.getAttribute("year"));
-    let elementAf = e.target.nextElementSibling
-      ? parseInt(e.target.nextElementSibling.getAttribute("year"))
+    let elementTa = parseInt(target.getAttribute("year"));
+    let elementAf = target.nextElementSibling
+      ? parseInt(target.nextElementSibling.getAttribute("year"))
       : null;
 
     console.log(
@@ -302,4 +310,32 @@ $(document).ready(function () {
       }
     );
   });
+});
+
+const slider = document.querySelector("#timelineCont");
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener("mousedown", (e) => {
+  isDown = true;
+  slider.classList.add("active");
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener("mouseleave", () => {
+  isDown = false;
+  slider.classList.remove("active");
+});
+slider.addEventListener("mouseup", () => {
+  isDown = false;
+  slider.classList.remove("active");
+});
+slider.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 1.5; //scroll-fast
+  slider.scrollLeft = scrollLeft - walk;
+  console.log(walk);
 });
