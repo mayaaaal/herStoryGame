@@ -84,6 +84,17 @@ let femmes = [
     hint1: "hint1",
     hint2: "hint2",
   },
+
+  {
+    id: "10",
+    img: "../assets/images/baya.png",
+    nom: "Baya",
+    phrase: "Peintre autodidacte algérienne, surréaliste et naïve, a inspiré Picasso et Matisse",
+    dateNaissance: "12/12/1931 ",
+    hint1: "hint1",
+    hint2: "hint2",
+  },
+
 ];
 
 function shuffle(array) {
