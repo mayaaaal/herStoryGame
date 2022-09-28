@@ -20,7 +20,9 @@ body {
   font-family: "RobotoDraft", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0%;
-  background-color: rgb(48, 15, 61);
+  /* background: rgb(121,9,86);
+background: linear-gradient(180deg, rgba(121,9,86,1) 0%, rgba(73,9,121,1) 50%, rgba(48,15,61,1) 100%); */
+  background-color: #300f3d;
 }
 
 * {
@@ -357,6 +359,19 @@ img#img3 {
 
 img#img4 {
   left: 75%;
+}
+
+img#img5 {
+  left: 30%;
+}
+
+img#img6 {
+  height: 136px;
+}
+
+img#img7 {
+  left: 20%;
+  bottom: 15%;
 }
 
 header h2 {
