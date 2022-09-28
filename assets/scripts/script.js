@@ -38,7 +38,7 @@ let femmes = [
   },
   {
     id: "5",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Grainne_Mhaol_Ni_Mhaille_Statue.jpg/260px-Grainne_Mhaol_Ni_Mhaille_Statue.jpg",
+    img: "../assets/images/graceO.png",
     nom: "Grace O'Malley",
     phrase: "Une pirate irlandaise",
     dateNaissance: "01/01/1530",
