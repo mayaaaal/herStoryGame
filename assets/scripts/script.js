@@ -103,8 +103,8 @@ let femmes = [
     phrase:
       "une artiste peintre française",
     dateNaissance: "01/14/1841 ",
-    hint1: "hint1",
-    hint2: "hint2",
+    hint1: "Cofondatrice et doyenne du mouvement d'avant-garde que fut l'impressionnisme",
+    hint2: "Tournant le dos très jeune à l'enseignement académique, elle fonde avec Claude Monet, Auguste Renoir, Alfred Sisley, Camille Pissarro, Edgar Degas le groupe d'avant-garde les « Artistes Anonymes Associés »",
   },
 
   {
@@ -114,7 +114,7 @@ let femmes = [
     phrase:
       "Une poétesse grecque",
     dateNaissance: "01/01/1100 ",
-    hint1: "hint1",
+    hint1: "Très célèbre durant l'Antiquité",
     hint2: "hint2",
   },
 
