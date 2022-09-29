@@ -439,3 +439,10 @@ div.dateDiv {
   cursor: -webkit-grabbing;
   transform: scale(1);
 }
+
+#line{
+  position: absolute;
+  border-top: 1px solid yellow;
+  width: 100%;
+  top: 100px;
+}

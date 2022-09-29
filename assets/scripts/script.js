@@ -46,7 +46,7 @@ let femmes = [
 
   {
     id: "6",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Ann_Zingha.jpg/260px-Ann_Zingha.jpg",
+    img: "../assets/images/njinga.png",
     nom: "Njinga du Ndongo",
     phrase:
       " reine du royaume de Ndongo et du royaume de Matamba dans l'actuel Angola",
@@ -95,6 +95,31 @@ let femmes = [
     hint1: "hint1",
     hint2: "hint2",
   },
+
+  {
+    id: "11",
+    img: "../assets/images/berthM.png",
+    nom: "Berth Morisot",
+    phrase:
+      "une artiste peintre française",
+    dateNaissance: "01/14/1841 ",
+    hint1: "hint1",
+    hint2: "hint2",
+  },
+
+  {
+    id: "12",
+    img: "../assets/images/sapho.png",
+    nom: "Sapho",
+    phrase:
+      "Une poétesse grecque",
+    dateNaissance: "01/01/1100 ",
+    hint1: "hint1",
+    hint2: "hint2",
+  },
+
+
+  
 ];
 
 function shuffle(array) {
@@ -158,7 +183,11 @@ function CreerCard(femmes, index) {
 const draggables = document.querySelectorAll(".draggable");
 const containers = document.querySelectorAll(".dropZone");
 let timeline = document.getElementById("timeLine");
+let pile = document.getElementById("mesCards")
 let tries = 0;
+
+
+
 
 draggables.forEach((draggable) => {
   draggable.addEventListener("dragstart", () => {
