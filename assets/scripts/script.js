@@ -67,7 +67,7 @@ let femmes = [
 
   {
     id: "8",
-    img: "https://images.squarespace-cdn.com/content/v1/5cd9fda69d41495d2b2eb614/1591360447957-I666ER8FVOWYLOUF6XC5/neila.jpg",
+    img: "../assets/images/pinabausch.png",
     nom: "Pina Bausch",
     phrase: "une danseuse et chorégraphe allemande",
     dateNaissance: "07/27/1940 ",
