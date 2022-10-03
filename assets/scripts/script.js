@@ -1,127 +1,3 @@
-let femmes = [
-  {
-    id: "1",
-    img: "../assets/images/thamber-(1).png",
-    nom: "Greta Thunberg",
-    phrase: "Une militante écologiste suédoise",
-    dateNaissance: "01/03/2003",
-    hint1: "hint1",
-    hint2: "hint2",
-  },
-  {
-    id: "2",
-    img: "../assets/images/anne.png",
-    nom: "Anne Frank",
-    phrase:
-      "Une adolescente allemande connue pour avoir écrit un journal intime",
-    dateNaissance: "06/12/1929",
-    hint1: "hint1",
-    hint2: "hint2",
-  },
-  {
-    id: "3",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Rosaparks.jpg/260px-Rosaparks.jpg",
-    nom: "Rosa Parks",
-    phrase: "La mère du mouvement des droits civiques",
-    dateNaissance: "02/04/1913",
-    hint1: "hint1",
-    hint2: "hint2",
-  },
-  {
-    id: "4",
-    img: "../assets/images/hatchepsut.png",
-    nom: "Hatchepsout",
-    phrase: "une reine de l'Égypte antique qui deviendra pharaon",
-    dateNaissance: "1/1/1000",
-    hint1: "hint1",
-    hint2: "hint2",
-  },
-  {
-    id: "5",
-    img: "../assets/images/graceO.png",
-    nom: "Grace O'Malley",
-    phrase: "Une pirate irlandaise",
-    dateNaissance: "01/01/1530",
-  },
-
-  {
-    id: "6",
-    img: "../assets/images/njinga.png",
-    nom: "Njinga du Ndongo",
-    phrase:
-      " reine du royaume de Ndongo et du royaume de Matamba dans l'actuel Angola",
-    dateNaissance: "01/01/1583 ",
-    hint1: "hint1",
-    hint2: "hint2",
-  },
-  {
-    id: "7",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/NASA_human_computers_-_Katherine_Coleman_Goble_Johnson.jpg/170px-NASA_human_computers_-_Katherine_Coleman_Goble_Johnson.jpg",
-    nom: "Katherine Johnson",
-    phrase:
-      " reine du royaume de Ndongo et du royaume de Matamba dans l'actuel Angola",
-    dateNaissance: "08/26/1918 ",
-    hint1: "hint1",
-    hint2: "hint2",
-  },
-
-  {
-    id: "8",
-    img: "../assets/images/pinabausch.png",
-    nom: "Pina Bausch",
-    phrase: "une danseuse et chorégraphe allemande",
-    dateNaissance: "07/27/1940 ",
-    hint1: "hint1",
-    hint2: "hint2",
-  },
-
-  {
-    id: "9",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Coccinelle_%28cropped%29.jpg/300px-Coccinelle_%28cropped%29.jpg",
-    nom: "Coccinelle",
-    phrase: "C'est l'une des premières femmes trans connues du grand public.",
-    dateNaissance: "08/23/1921 ",
-    hint1: "hint1",
-    hint2: "hint2",
-  },
-
-  {
-    id: "10",
-    img: "../assets/images/baya.png",
-    nom: "Baya",
-    phrase:
-      "Peintre autodidacte algérienne, surréaliste et naïve, a inspiré Picasso et Matisse",
-    dateNaissance: "12/12/1931 ",
-    hint1: "hint1",
-    hint2: "hint2",
-  },
-
-  {
-    id: "11",
-    img: "../assets/images/berthM.png",
-    nom: "Berth Morisot",
-    phrase:
-      "une artiste peintre française",
-    dateNaissance: "01/14/1841 ",
-    hint1: "Cofondatrice et doyenne du mouvement d'avant-garde que fut l'impressionnisme",
-    hint2: "Tournant le dos très jeune à l'enseignement académique, elle fonde avec Claude Monet, Auguste Renoir, Alfred Sisley, Camille Pissarro, Edgar Degas le groupe d'avant-garde les « Artistes Anonymes Associés »",
-  },
-
-  {
-    id: "12",
-    img: "../assets/images/sapho.png",
-    nom: "Sapho",
-    phrase:
-      "Une poétesse grecque",
-    dateNaissance: "01/01/1100 ",
-    hint1: "Très célèbre durant l'Antiquité",
-    hint2: "hint2",
-  },
-
-
-  
-];
-
 function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
@@ -164,7 +40,7 @@ function CreerCard(femmes, index) {
     )}" id="maCard${femmes.id}" index ="${index}" draggable = 'true'">
                   
                   <div class="property-image">
-                      <img src="${femmes.img}"/>
+                      <img draggable=+"false" src="${femmes.img}"/>
                       </div>
                       <div class="property-description">
                       <h2>${femmes.nom}</h2>
@@ -183,14 +59,14 @@ function CreerCard(femmes, index) {
 const draggables = document.querySelectorAll(".draggable");
 const containers = document.querySelectorAll(".dropZone");
 let timeline = document.getElementById("timeLine");
-let pile = document.getElementById("mesCards")
+let pile = document.getElementById("mesCards");
 let tries = 0;
 
-
-
-
 draggables.forEach((draggable) => {
-  draggable.addEventListener("dragstart", () => {
+  draggable.addEventListener("dragstart", (e) => {
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
     draggable.classList.add("dragging");
     draggable.classList.remove("wrong");
     draggable.classList.remove("right");
@@ -209,37 +85,37 @@ draggables.forEach((draggable) => {
       ? parseInt(target.nextElementSibling.getAttribute("year"))
       : null;
 
-    console.log(
-      elementBe,
-      elementAf,
-      elementTa,
-      elementTa < elementAf,
-      elementTa > elementBe
-    );
+    // console.log(
+    //   elementBe,
+    //   elementAf,
+    //   elementTa,
+    //   elementTa < elementAf,
+    //   elementTa > elementBe
+    // );
 
     if (elementBe === null || elementAf === null) {
-      console.log("null value");
+      // last or first card
       if (
         (elementBe === null && elementTa < elementAf) ||
         (elementAf === null && elementTa > elementBe)
       ) {
-        draggable.classList.remove("dragging");
-        draggable.classList.remove("wrong");
+        draggable.classList.remove("dragging", "wrong");
 
         draggable.classList.add("right");
         tries = 0;
+        checkEndGame();
       } else {
         draggable.classList.remove("right");
         draggable.classList.add("wrong");
         triesHandler(draggable);
       }
     } else if (elementTa > elementBe && elementTa < elementAf) {
-      console.log("in center");
-      draggable.classList.remove("dragging");
-      draggable.classList.remove("wrong");
+      // between cards
+      draggable.classList.remove("dragging", "wrong");
 
       draggable.classList.add("right");
       tries = 0;
+      checkEndGame();
     } else {
       console.log("no place");
       let mesCards = document.getElementById("mesCards");
@@ -341,6 +217,8 @@ $(document).ready(function () {
   });
 });
 
+// scroll
+
 const slider = document.querySelector("#timelineCont");
 let isDown = false;
 let startX;
@@ -367,4 +245,26 @@ slider.addEventListener("mousemove", (e) => {
   const walk = (x - startX) * 1.5; //scroll-fast
   slider.scrollLeft = scrollLeft - walk;
   console.log(walk);
+});
+
+function checkEndGame() {
+  if (pile.childElementCount == 0) {
+    gameOver();
+  } else {
+    console.log("check");
+  }
+}
+
+function gameOver() {
+  fire();
+  let canvas = document.querySelector("canvas");
+  canvas.classList.remove("hidden");
+}
+
+let speech = new SpeechSynthesisUtterance();
+speech.lang = "fr";
+
+document.querySelector("#talk").addEventListener("click", () => {
+  speech.text = document.querySelector(".message").innerText;
+  window.speechSynthesis.speak(speech);
 });
