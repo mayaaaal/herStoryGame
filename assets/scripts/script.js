@@ -26,6 +26,7 @@ for (let i = 0; i < femmes.length; i++) {
 function CreerCard(femmes, index) {
   let date = new Date(femmes.dateNaissance);
   let year = date.getFullYear();
+  const folder = "assets/images/";
   // formateur.img -> pour obtenir l'image du formateur renseigné en paramètre
   // formateur.nom -> pour obtenir le nom du formateur renseigné en paramètre
   // formateur.dateNaissance -> pour obtenir la date de naissance du formateur renseigné en paramètre
@@ -40,7 +41,7 @@ function CreerCard(femmes, index) {
     )}" id="maCard${femmes.id}" index ="${index}" draggable = 'true'">
                   
                   <div class="property-image">
-                      <img draggable="false" src="${femmes.img}"/>
+                      <img draggable="false" src="${folder + femmes.img}"/>
                       </div>
                       <div class="property-description">
                       <h2>${femmes.nom}</h2>
@@ -322,20 +323,18 @@ function checkCookie() {
         // call ajax vers server php
 
         const xhr = new XMLHttpRequest();
-        xhr.open('post', 'http://localhost/herStoryGame/login.php');
+        xhr.open("post", "http://localhost/herStoryGame/login.php");
         const fd = new FormData();
-        fd.append('name', $("#formInputname").val());
-        fd.append('nickname', $("#formInputNickname").val());
+        fd.append("name", $("#formInputname").val());
+        fd.append("nickname", $("#formInputNickname").val());
         xhr.send(fd);
-        xhr.onload = ({target}) => {
-          if(target.responseText === "OK") {
+        xhr.onload = ({ target }) => {
+          if (target.responseText === "OK") {
             myModal.hide();
             setCookie("username", $("#formInputname").val(), 2);
+          } else {
           }
-          else{
-          
-          }
-        }
+        };
       },
       false
     );

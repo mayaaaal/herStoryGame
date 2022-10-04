@@ -339,7 +339,7 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
+  width: 40%;
   background-color: white;
   padding: 6rem;
   border-radius: 100px;
@@ -361,7 +361,7 @@ p {
   margin-left: -38px;
 }
 
-.overlay {
+/* .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -370,7 +370,7 @@ p {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 5;
-}
+} */
 
 .lost {
   display: none;

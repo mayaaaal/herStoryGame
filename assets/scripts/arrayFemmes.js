@@ -1,7 +1,7 @@
 let femmes = [
   {
     id: "1",
-    img: "../assets/images/thamber-(1).png",
+    img: "thamber-(1).png",
     nom: "Greta Thunberg",
     phrase: "Une militante écologiste suédoise",
     dateNaissance: "01/03/2003",
@@ -10,7 +10,7 @@ let femmes = [
   },
   {
     id: "2",
-    img: "../assets/images/anne.png",
+    img: "anne.png",
     nom: "Anne Frank",
     phrase:
       "Une adolescente allemande connue pour avoir écrit un journal intime",
@@ -31,7 +31,7 @@ let femmes = [
   },
   {
     id: "4",
-    img: "../assets/images/hatchepsut.png",
+    img: "hatchepsut.png",
     nom: "Hatchepsout",
     phrase: "une reine de l'Égypte antique qui deviendra pharaon",
     dateNaissance: "1/1/1000",
@@ -40,7 +40,7 @@ let femmes = [
   },
   {
     id: "5",
-    img: "../assets/images/graceO.png",
+    img: "graceO.png",
     nom: "Grace O'Malley",
     phrase: "Une pirate irlandaise",
     dateNaissance: "01/01/1530",
@@ -48,7 +48,7 @@ let femmes = [
 
   {
     id: "6",
-    img: "../assets/images/njinga.png",
+    img: "njinga.png",
     nom: "Njinga du Ndongo",
     phrase:
       " reine du royaume de Ndongo et du royaume de Matamba dans l'actuel Angola",
@@ -69,7 +69,7 @@ let femmes = [
 
   {
     id: "8",
-    img: "../assets/images/pinabausch.png",
+    img: "pinabausch.png",
     nom: "Pina Bausch",
     phrase: "une danseuse et chorégraphe allemande",
     dateNaissance: "07/27/1940 ",
@@ -90,7 +90,7 @@ let femmes = [
 
   {
     id: "10",
-    img: "../assets/images/baya.png",
+    img: "baya.png",
     nom: "Baya",
     phrase:
       "Peintre autodidacte algérienne, surréaliste et naïve, a inspiré Picasso et Matisse",
@@ -101,7 +101,7 @@ let femmes = [
 
   {
     id: "11",
-    img: "../assets/images/berthM.png",
+    img: "berthM.png",
     nom: "Berth Morisot",
     phrase: "une artiste peintre française",
     dateNaissance: "01/14/1841 ",
@@ -113,7 +113,7 @@ let femmes = [
 
   {
     id: "12",
-    img: "../assets/images/sapho.png",
+    img: "sapho.png",
     nom: "Sapho",
     phrase: "Une poétesse grecque",
     dateNaissance: "01/01/1100 ",
