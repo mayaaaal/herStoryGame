@@ -319,8 +319,23 @@ function checkCookie() {
         }
         event.preventDefault();
         form.classList.add("was-validated");
-        myModal.hide();
-        setCookie("username", $("#formInputname").val(), 2);
+        // call ajax vers server php
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('post', 'http://localhost/herStoryGame/login.php');
+        const fd = new FormData();
+        fd.append('name', $("#formInputname").val());
+        fd.append('nickname', $("#formInputNickname").val());
+        xhr.send(fd);
+        xhr.onload = ({target}) => {
+          if(target.responseText === "OK") {
+            myModal.hide();
+            setCookie("username", $("#formInputname").val(), 2);
+          }
+          else{
+          
+          }
+        }
       },
       false
     );
