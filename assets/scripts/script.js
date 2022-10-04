@@ -35,7 +35,7 @@ function CreerCard(femmes, index) {
     femmes.dateNaissance
   )}">
   <div class="dateDiv">${year}</div>
-    <div class="property-card card" year="${Date.parse(
+    <div class="property-card carte" year="${Date.parse(
       femmes.dateNaissance
     )}" id="maCard${femmes.id}" index ="${index}" draggable = 'true'">
                   
@@ -60,6 +60,19 @@ const containers = document.querySelectorAll(".dropZone");
 let timeline = document.getElementById("timeLine");
 let pile = document.getElementById("mesCards");
 let tries = 0;
+let myModal;
+let pulp = document.getElementById("pulp");
+
+timeline.addEventListener("dragover", (e) => {
+  console.log(e.clientX);
+  if (e.clientX < 200) {
+    slider.scrollLeft = slider.scrollLeft - 50;
+  } else if (e.clientX > window.innerWidth - 200) {
+    slider.scrollLeft = slider.scrollLeft + 50;
+  } else {
+    return;
+  }
+});
 
 draggables.forEach((draggable) => {
   draggable.addEventListener("dragstart", (e) => {
@@ -74,6 +87,7 @@ draggables.forEach((draggable) => {
 
     // mesCards.classList.remove("red");
   });
+
   draggable.addEventListener("dragend", (e) => {
     let target = e.currentTarget;
     let elementBe = target.previousElementSibling
@@ -158,11 +172,13 @@ function getDragAfterElement(container, X) {
   ).element;
 }
 
-const modal = document.querySelector(".modal");
+const modal = document.querySelector(".speechBubble");
 const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".close-modal");
+const btnCloseModal = document.querySelector(".close-speechBubble");
 
 const openModal = function (hint) {
+  pulp.classList.remove("stopSpeech");
+  pulp.classList.add("speech");
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
   const message = document.querySelector(".message");
@@ -170,12 +186,14 @@ const openModal = function (hint) {
 };
 
 const closeModal = function () {
+  pulp.classList.remove("speech");
+  pulp.classList.add("stopSpeech");
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
 };
 
-btnCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
+btnCloseModal.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
@@ -197,24 +215,6 @@ function triesHandler(card) {
     tries = 0;
   }
 }
-
-$(document).ready(function () {
-  $("#img7").on("mouseover", function () {
-    let startLeft = $(this).css("left");
-    let windowLeft = window.innerWidth;
-    $(this).animate(
-      {
-        left: "-250px",
-      },
-      1300,
-      function () {
-        console.log("finished first animation");
-        $(this).css("left", windowLeft + "px");
-        $(this).animate({ left: startLeft }, 1300);
-      }
-    );
-  });
-});
 
 // scroll
 
@@ -266,4 +266,88 @@ speech.lang = "fr";
 document.querySelector("#talk").addEventListener("click", () => {
   speech.text = document.querySelector(".message").innerText;
   window.speechSynthesis.speak(speech);
+});
+
+//userName cookie
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+    myModal.show();
+  }
+}
+
+//check form
+
+(function () {
+  "use strict";
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll(".needs-validation");
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        event.preventDefault();
+        form.classList.add("was-validated");
+        myModal.hide();
+        setCookie("username", $("#formInputname").val(), 2);
+      },
+      false
+    );
+  });
+})();
+
+//start
+
+$(document).ready(function () {
+  myModal = new bootstrap.Modal(document.getElementById("staticBackdrop"), {
+    keyboard: false,
+  });
+  checkCookie();
+
+  $("#img7").on("mouseover", function () {
+    let startLeft = $(this).css("left");
+    let windowLeft = window.innerWidth;
+    $(this).animate(
+      {
+        left: "-250px",
+      },
+      1300,
+      function () {
+        console.log("finished first animation");
+        $(this).css("left", windowLeft + "px");
+        $(this).animate({ left: startLeft }, 1300);
+      }
+    );
+  });
 });

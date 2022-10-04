@@ -1,7 +1,7 @@
 /* 241.88976378 */
 /* 336.37795276 */
 
-/* .card {
+/* .carte {
   width: 150px;
   height: 300px;
   background-color: lightgrey;
@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.card h2 {
+.carte h2 {
   color: white;
 } */
 
@@ -76,7 +76,7 @@ p {
   flex-shrink: 0;
 }
 
-.wrong .card {
+.wrong .carte {
   animation: pulseW 4s;
 }
 
@@ -106,7 +106,7 @@ p {
   }
 }
 
-.right .card {
+.right .carte {
   animation: pulseR 4s;
 }
 
@@ -221,7 +221,7 @@ p {
   display: block;
 }
 
-/* .card {
+/* .carte {
     margin-top: 10px;
   
     background-color: lightgrey;
@@ -234,13 +234,18 @@ p {
     cursor: move;
     flex-shrink: 0;
     margin: 20px;
-  }
-  
-  .card h2 {
-    color: rgb(26, 24, 24);
   } */
 
-.card img {
+.carte h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.carte p {
+  font-size: 0.8em;
+}
+
+.carte img {
   width: 100%;
 
   object-fit: cover;
@@ -312,7 +317,7 @@ p {
   height: 28em;
 }
 
-.close-modal {
+.close-speechBubble {
   position: absolute;
   top: 1.2rem;
   right: 2rem;
@@ -329,21 +334,20 @@ p {
   display: none;
 }
 
-.modal {
+.speechBubble {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
-
   background-color: white;
   padding: 6rem;
-  border-radius: 30px;
+  border-radius: 100px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
 
-.modal:after {
+.speechBubble :after {
   content: "";
   position: absolute;
   display: block;
@@ -354,7 +358,7 @@ p {
   border-color: transparent #fdfcfc transparent transparent;
   bottom: -59px;
   left: 80%;
-  margin-left: -30px;
+  margin-left: -38px;
 }
 
 .overlay {
@@ -384,7 +388,7 @@ img#img1 {
 }
 
 img#img2 {
-  left: 83%;
+  left: 73%;
 }
 
 img#img3 {
@@ -392,7 +396,7 @@ img#img3 {
 }
 
 img#img4 {
-  left: 70%;
+  left: 25%;
 }
 
 img#img5 {
@@ -406,6 +410,48 @@ img#img6 {
 img#img7 {
   left: 20%;
   bottom: 15%;
+}
+
+img#pulp {
+  left: 80%;
+  z-index: 7;
+}
+
+img#pulp.speech {
+  animation: pulpSpeech 0.3s linear forwards;
+  animation-iteration-count: 1;
+}
+
+img#pulp.stopSpeech {
+  animation: pulpStopSpeech 0.3s linear forwards;
+  animation-iteration-count: 1;
+}
+@keyframes pulpSpeech {
+  from {
+    transform: scale(1);
+    bottom: 0px;
+    left: 80%;
+  }
+
+  to {
+    transform: scale(1.7);
+    bottom: 35px;
+    left: 73%;
+  }
+}
+
+@keyframes pulpStopSpeech {
+  from {
+    transform: scale(1.7);
+    bottom: 35px;
+    left: 73%;
+  }
+
+  to {
+    transform: scale(1);
+    bottom: 0px;
+    left: 80%;
+  }
 }
 
 header h2 {
@@ -449,4 +495,17 @@ div.dateDiv {
 
 canvas {
   cursor: crosshair;
+}
+#home {
+  position: absolute;
+  z-index: 4;
+}
+
+header h2 {
+  position: absolute;
+  color: rgb(255, 240, 254);
+  left: 26px;
+  font-weight: bold;
+  font-size: 38px;
+  top: 26px;
 }
