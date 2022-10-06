@@ -1,3 +1,5 @@
+"use strict";
+
 function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
@@ -63,6 +65,7 @@ let pile = document.getElementById("mesCards");
 let tries = 0;
 let myModal;
 let pulp = document.getElementById("pulp");
+let bibli = document.getElementById("bibli");
 
 timeline.addEventListener("dragover", (e) => {
   console.log(e.clientX);
@@ -187,9 +190,13 @@ const openModal = function (hint) {
 };
 
 const closeModal = function () {
-  pulp.classList.remove("speech");
-  pulp.classList.add("stopSpeech");
+  if (pulp.classList.contains("speech")) {
+    pulp.classList.remove("speech");
+    pulp.classList.add("stopSpeech");
+  }
+
   modal.classList.add("hidden");
+  bibli.classList.add("hidden");
   overlay.classList.add("hidden");
 };
 
@@ -197,7 +204,10 @@ overlay.addEventListener("click", closeModal);
 btnCloseModal.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+  if (
+    (e.key === "Escape" && !modal.classList.contains("hidden")) ||
+    !bibli.classList.contains("hidden")
+  ) {
     closeModal();
   }
 });
@@ -264,9 +274,15 @@ function gameOver() {
 let speech = new SpeechSynthesisUtterance();
 speech.lang = "fr";
 
-document.querySelector("#talk").addEventListener("click", () => {
+document.querySelector("#talk").addEventListener("click", (e) => {
+  e.preventDefault();
   speech.text = document.querySelector(".message").innerText;
-  window.speechSynthesis.speak(speech);
+  if (speechSynthesis.speak) {
+    speechSynthesis.cancel();
+  }
+  if (!speechSynthesis.pending || !speechSynthesis.speaking) {
+    window.speechSynthesis.speak(speech);
+  }
 });
 
 //userName cookie

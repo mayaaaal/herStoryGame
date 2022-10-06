@@ -334,13 +334,14 @@ p {
   display: none;
 }
 
+
 .speechBubble {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 70%;
   transform: translate(-50%, -50%);
   width: 40%;
-  background-color: white;
+  background-color: #f6e7d7;;
   padding: 6rem;
   border-radius: 100px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
@@ -355,13 +356,13 @@ p {
   z-index: 1;
   border-style: solid;
   border-width: 0 81px 81px 0;
-  border-color: transparent #fdfcfc transparent transparent;
+  border-color: transparent #f6e7d7 transparent transparent;
   bottom: -59px;
   left: 80%;
   margin-left: -38px;
 }
 
-/* .overlay {
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -370,7 +371,7 @@ p {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 5;
-} */
+}
 
 .lost {
   display: none;
@@ -430,13 +431,13 @@ img#pulp.stopSpeech {
   from {
     transform: scale(1);
     bottom: 0px;
-    left: 80%;
+    /* left: 80%; */
   }
 
   to {
     transform: scale(1.7);
     bottom: 35px;
-    left: 73%;
+    /* left: 73%; */
   }
 }
 
@@ -444,14 +445,20 @@ img#pulp.stopSpeech {
   from {
     transform: scale(1.7);
     bottom: 35px;
-    left: 73%;
+    /* left: 73%; */
   }
 
   to {
     transform: scale(1);
     bottom: 0px;
-    left: 80%;
+    /* left: 80%; */
   }
+}
+
+header{
+  position: absolute;
+    top: 0;
+}
 }
 
 header h2 {
