@@ -43,7 +43,11 @@ function CreerCard(femmes, index) {
     )}" id="maCard${femmes.id}" index ="${index}" draggable = 'true'">
                   
                   <div class="property-image">
-                      <img draggable="false" src="${folder + femmes.img}"/>
+                      <img draggable="false" src="${
+                        !femmes.img.includes("http")
+                          ? folder + femmes.img
+                          : femmes.img
+                      }"/>
                       </div>
                       <div class="property-description">
                       <h2>${femmes.nom}</h2>
