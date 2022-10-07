@@ -7,6 +7,7 @@ let femmes = [
     dateNaissance: "01/03/2003",
     hint1: "hint1",
     hint2: "hint2",
+    bibli :"Greta Thunberg, née le 3 janvier 2003 à Stockholm (19 ans), est une jeune militante écologiste suédoise engagée dans la lutte contre le réchauffement climatique.Elle est connue parce qu'elle fait chaque vendredi la grève de l'école devant le parlement suédois, mais aussi parce qu'elle a fait des conférences importantes : elle a par exemple pris la parole devant les dirigeants du monde entier lors de la COP24, une conférence organisée par l'ONU en Pologne en décembre 2018, et est intervenue en France à l'Assemblée nationale.",
   },
   {
     id: "2",
@@ -19,15 +20,17 @@ let femmes = [
       "le livre Le Journal d'Anne Frank écrit pendant les deux années où elle vivait cachée avec sa famille à Amsterdam aux Pays-Bas, sous occupation allemande",
     hint2:
       "le texte étant traduit dans plus de 70 langues5 et serait le livre le plus traduit et le plus lu dans le monde après la Bible",
+      bibli :"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
   {
     id: "3",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Rosaparks.jpg/260px-Rosaparks.jpg",
+    img: "rosaParks.png",
     nom: "Rosa Parks",
     phrase: "La mère du mouvement des droits civiques",
     dateNaissance: "02/04/1913",
     hint1: "hint1",
     hint2: "hint2",
+    bibli :"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
   {
     id: "4",
@@ -37,6 +40,7 @@ let femmes = [
     dateNaissance: "1/1/1000",
     hint1: "hint1",
     hint2: "hint2",
+    bibli :"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
   {
     id: "5",
@@ -44,6 +48,7 @@ let femmes = [
     nom: "Grace O'Malley",
     phrase: "Une pirate irlandaise",
     dateNaissance: "01/01/1530",
+    bibli :"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
 
   {
@@ -55,6 +60,7 @@ let femmes = [
     dateNaissance: "01/01/1583 ",
     hint1: "hint1",
     hint2: "hint2",
+    bibli :"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
   {
     id: "7",
@@ -65,6 +71,7 @@ let femmes = [
     dateNaissance: "08/26/1918 ",
     hint1: "hint1",
     hint2: "hint2",
+    bibli :"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
 
   {
@@ -76,6 +83,7 @@ let femmes = [
     hint1:
       "Pina Bausch est considérée comme l'une des principales figures de la danse contemporaine et de la danse-théâtre.",
     hint2: "hint2",
+    bibli :"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
 
   {
@@ -86,6 +94,7 @@ let femmes = [
     dateNaissance: "08/23/1921 ",
     hint1: "hint1",
     hint2: "hint2",
+    bibli :"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
 
   {
@@ -109,6 +118,7 @@ let femmes = [
       "Cofondatrice et doyenne du mouvement d'avant-garde que fut l'impressionnisme",
     hint2:
       "Tournant le dos très jeune à l'enseignement académique, elle fonde avec Claude Monet, Auguste Renoir, Alfred Sisley, Camille Pissarro, Edgar Degas le groupe d'avant-garde les « Artistes Anonymes Associés »",
+      bibli :"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
 
   {
@@ -119,5 +129,6 @@ let femmes = [
     dateNaissance: "01/01/1100 ",
     hint1: "Très célèbre durant l'Antiquité",
     hint2: "hint2",
+    bibli :"Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
 ];
