@@ -7,6 +7,8 @@ let femmes = [
     dateNaissance: "01/03/2003",
     hint1: "hint1",
     hint2: "hint2",
+    bibli:
+      "Greta Thunberg, née le 3 janvier 2003 à Stockholm (19 ans), est une jeune militante écologiste suédoise engagée dans la lutte contre le réchauffement climatique.Elle est connue parce qu'elle fait chaque vendredi la grève de l'école devant le parlement suédois, mais aussi parce qu'elle a fait des conférences importantes : elle a par exemple pris la parole devant les dirigeants du monde entier lors de la COP24, une conférence organisée par l'ONU en Pologne en décembre 2018, et est intervenue en France à l'Assemblée nationale.",
   },
   {
     id: "2",
@@ -19,15 +21,19 @@ let femmes = [
       "le livre Le Journal d'Anne Frank écrit pendant les deux années où elle vivait cachée avec sa famille à Amsterdam aux Pays-Bas, sous occupation allemande",
     hint2:
       "le texte étant traduit dans plus de 70 langues5 et serait le livre le plus traduit et le plus lu dans le monde après la Bible",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
   {
     id: "3",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Rosaparks.jpg/260px-Rosaparks.jpg",
+    img: "rosaParks.png",
     nom: "Rosa Parks",
     phrase: "La mère du mouvement des droits civiques",
     dateNaissance: "02/04/1913",
     hint1: "hint1",
     hint2: "hint2",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
   {
     id: "4",
@@ -37,6 +43,8 @@ let femmes = [
     dateNaissance: "1/1/1000",
     hint1: "hint1",
     hint2: "hint2",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
   {
     id: "5",
@@ -44,6 +52,8 @@ let femmes = [
     nom: "Grace O'Malley",
     phrase: "Une pirate irlandaise",
     dateNaissance: "01/01/1530",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
 
   {
@@ -55,6 +65,8 @@ let femmes = [
     dateNaissance: "01/01/1583 ",
     hint1: "hint1",
     hint2: "hint2",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
   {
     id: "7",
@@ -65,6 +77,8 @@ let femmes = [
     dateNaissance: "08/26/1918 ",
     hint1: "hint1",
     hint2: "hint2",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
 
   {
@@ -76,6 +90,8 @@ let femmes = [
     hint1:
       "Pina Bausch est considérée comme l'une des principales figures de la danse contemporaine et de la danse-théâtre.",
     hint2: "hint2",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
 
   {
@@ -86,6 +102,8 @@ let femmes = [
     dateNaissance: "08/23/1921 ",
     hint1: "hint1",
     hint2: "hint2",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
 
   {
@@ -109,6 +127,8 @@ let femmes = [
       "Cofondatrice et doyenne du mouvement d'avant-garde que fut l'impressionnisme",
     hint2:
       "Tournant le dos très jeune à l'enseignement académique, elle fonde avec Claude Monet, Auguste Renoir, Alfred Sisley, Camille Pissarro, Edgar Degas le groupe d'avant-garde les « Artistes Anonymes Associés »",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
   },
 
   {
@@ -119,5 +139,20 @@ let femmes = [
     dateNaissance: "01/01/1100 ",
     hint1: "Très célèbre durant l'Antiquité",
     hint2: "hint2",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+  },
+
+  {
+    id: "13",
+    img: "frida.png",
+    nom: "Frida Kahlo",
+    phrase: "une artiste peintre mexicaine",
+    dateNaissance: "07/06/1907 ",
+    hint1:
+      "Frida Kahlo est l'une des trente-cinq premières filles admises sur un total de 2 000 élèves. ",
+    hint2: "hint2",
+    bibli:
+      "Elle est née en 1907 à Coyoacán au Mexique. À l'âge de 6 ans, elle est malade de la polio ce qui la laisse handicapée; certains spécialistes pensent qu'elle devait souffrir d'une malformation de naissance, empêchant le bon développement de sa colonne vertébrale.Elle commence à étudier la médecine pour devenir médecin mais, à l'âge de 18 ans, elle est victime d'un grave accident de la circulation dans lequel son bus percute un métro. Pendant toute sa vie, elle garde de cet accident des périodes de grande douleur physique. Elle abandonne alors ses études de médecine et commence à peindre, s'inspirant des évènements survenus dans sa vie.Sa famille aménage un lit à baldaquin avec un miroir accroché à l'horizontale car elle est immobilisée dans son lit suite à son accident. Grâce à ceci Frida Kahlo a pu peindre 55 autoportraits sur 143 tableaux.Ses tableaux montrent sa douleur et la vie difficile des femmes, en particulier ses regrets de ne pas pouvoir être mère.Elle épouse Diego Rivera en 1929, mais ils ont chacun de leur côté des aventures amoureuses. Tous deux sont membres du Parti communiste mexicain. En 1937, ils accueillent pendant quelques semaines dans leur demeure le révolutionnaire russe Léon Trotsky et son épouse Natalia : Trotsky a été expulsé en 1929 de l'Union Soviétique par Staline, et le Mexique vient de lui accorder l'asile politique. Rivera et Frida Kahlo divorcent en 1939 (Rivera aurait eu une liaison avec Cristina Kahlo, la propre sœur de Frida), mais ils se remarient ensemble en 1940 et leur union dure jusqu'à la mort de Frida Kahlo, en 1954, des suites d'une embolie pulmonaire à l'âge de 47 ans.",
   },
 ];

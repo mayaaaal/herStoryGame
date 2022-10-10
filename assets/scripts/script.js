@@ -1,4 +1,8 @@
 "use strict";
+let score;
+let fullScore = femmes.length;
+let totalScore = fullScore - score;
+
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -26,12 +30,11 @@ for (let i = 0; i < femmes.length; i++) {
 }
 
 function CreerCard(femmes, index) {
+  score=0;
   let date = new Date(femmes.dateNaissance);
   let year = date.getFullYear();
   const folder = "assets/images/";
-  // formateur.img -> pour obtenir l'image du formateur renseigné en paramètre
-  // formateur.nom -> pour obtenir le nom du formateur renseigné en paramètre
-  // formateur.dateNaissance -> pour obtenir la date de naissance du formateur renseigné en paramètre
+
   $("#mesCards").append(`
   
     <div class="draggable" index ="${index}" year="${Date.parse(
@@ -70,6 +73,11 @@ let tries = 0;
 let myModal;
 let pulp = document.getElementById("pulp");
 let bibli = document.getElementById("bibli");
+let mesCards = document.getElementById("mesCards");
+
+
+
+//scrol while drag over timeline
 
 timeline.addEventListener("dragover", (e) => {
   console.log(e.clientX);
@@ -82,6 +90,8 @@ timeline.addEventListener("dragover", (e) => {
   }
 });
 
+//drag 
+
 draggables.forEach((draggable) => {
   draggable.addEventListener("dragstart", (e) => {
     isDown = true;
@@ -90,10 +100,6 @@ draggables.forEach((draggable) => {
     draggable.classList.add("dragging");
     draggable.classList.remove("wrong");
     draggable.classList.remove("right");
-
-    // timeline.classList.remove("green");
-
-    // mesCards.classList.remove("red");
   });
 
   draggable.addEventListener("dragend", (e) => {
@@ -106,18 +112,14 @@ draggables.forEach((draggable) => {
       ? parseInt(target.nextElementSibling.getAttribute("year"))
       : null;
 
-    // console.log(
-    //   elementBe,
-    //   elementAf,
-    //   elementTa,
-    //   elementTa < elementAf,
-    //   elementTa > elementBe
-    // );
+      //logic of sorting card by chronologic order
 
     if (elementBe === null || elementAf === null) {
-      // last or first card
+      // premier card
       if (
+        //first card in the right place 
         (elementBe === null && elementTa < elementAf) ||
+        //last card in the right place 
         (elementAf === null && elementTa > elementBe)
       ) {
         draggable.classList.remove("dragging", "wrong");
@@ -126,6 +128,7 @@ draggables.forEach((draggable) => {
         tries = 0;
         checkEndGame();
       } else {
+        //if it's wrong
         draggable.classList.remove("right");
         draggable.classList.add("wrong");
         triesHandler(draggable);
@@ -133,16 +136,12 @@ draggables.forEach((draggable) => {
     } else if (elementTa > elementBe && elementTa < elementAf) {
       // between cards
       draggable.classList.remove("dragging", "wrong");
-
       draggable.classList.add("right");
       tries = 0;
       checkEndGame();
     } else {
       console.log("no place");
-      let mesCards = document.getElementById("mesCards");
-
       draggable.classList.remove("right");
-
       triesHandler(draggable);
     }
   });
@@ -150,9 +149,7 @@ draggables.forEach((draggable) => {
 containers.forEach((container) => {
   container.addEventListener("dragover", (e) => {
     e.preventDefault();
-
     const afterElement = getDragAfterElement(container, e.clientX);
-
     const draggable = document.querySelector(".dragging");
     if (afterElement == null) {
       container.appendChild(draggable);
@@ -168,7 +165,6 @@ function getDragAfterElement(container, X) {
   return draggabeElements.reduce(
     (closest, child) => {
       const box = child.getBoundingClientRect();
-
       const Offset = X - box.left - box.width / 2;
       if (Offset < 0 && Offset > closest.Offset) {
         return { Offset: Offset, element: child };
@@ -183,7 +179,6 @@ function getDragAfterElement(container, X) {
 const modal = document.querySelector(".speechBubble");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".close-speechBubble");
-
 const openModal = function (hint) {
   pulp.classList.remove("stopSpeech");
   pulp.classList.add("speech");
@@ -222,12 +217,14 @@ function triesHandler(card) {
     let index = parseInt(card.getAttribute("index"));
     console.log(femmes[index]);
     let hint = tries < 2 ? femmes[index].hint1 : femmes[index].hint2;
-
     document.getElementById("mesCards").prepend(card);
     openModal(hint);
   } else {
     document.querySelector(".lost").prepend(card);
     tries = 0;
+    score -=1;
+    console.log(score);
+    console.log(totalScore);
   }
 }
 
@@ -263,8 +260,12 @@ slider.addEventListener("mousemove", (e) => {
 
 function checkEndGame() {
   if (pile.childElementCount == 0) {
+    console.log(`${totalScore}/${fullScore}`);
     gameOver();
   } else {
+    score+=1;
+    console.log(score);
+   
     console.log("check");
   }
 }
@@ -273,6 +274,8 @@ function gameOver() {
   fire();
   let canvas = document.querySelector("canvas");
   canvas.classList.remove("hidden");
+
+  
 }
 
 let speech = new SpeechSynthesisUtterance();

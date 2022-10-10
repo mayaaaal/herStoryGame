@@ -21,7 +21,7 @@ function creerBiblioCard(femmes, index) {
       <div class="card k">
         <h4>${femmes.nom}</h4>
         <h5>${year}</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed porta eros, vel pulvinar velit. Sed id urna et enim tincidunt dignissim quis nec urna. Maecenas et metus lectus. Phasellus sollicitudin ex a sagittis vulputate. Integer maximus, urna vel sagittis tristique, est libero lacinia sem, sed maximus ipsum felis quis justo. Nam euismod ante sit amet molestie pretium. Sed id posuere tortor, placerat condimentum nisl. Nulla augue libero, iaculis eu enim vitae, euismod maximus risus. Morbi accumsan dui a ullamcorper finibus. Duis scelerisque placerat tellus, in ullamcorper justo placerat a.</p>
+        <p>${femmes.bibli}</p>
       </div>
 
       <!-- back content -->
