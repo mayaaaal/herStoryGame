@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 $name = $_POST['name'];
 $nickname = $_POST['nickname'];
 
-$pdo = new PDO("mysql:host=localhost;dbname=login", "root", "");
+$pdo = new PDO("mysql:host=localhost;dbname=login", "root", "root");
 $statement = $pdo->prepare("SELECT * FROM User WHERE name = ? AND nickname = ?");
 $statement->execute([
     $name, $nickname

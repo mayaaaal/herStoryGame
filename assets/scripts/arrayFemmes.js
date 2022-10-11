@@ -5,8 +5,8 @@ let femmes = [
     nom: "Greta Thunberg",
     phrase: "Une militante écologiste suédoise",
     dateNaissance: "01/03/2003",
-    hint1: "hint1",
-    hint2: "hint2",
+    hint1: "La grève de Greta a attiré l'attention des médias du monde entier, et a incité des dizaines de milliers d'écoliers autour du monde à faire de même",
+    hint2: "Selon Greta, la multiplication des grèves de l'école pour le climat est une bonne chose, Cela prouve que nous ne sommes jamais trop petits pour faire la différence",
     bibli:
       "Greta Thunberg, née le 3 janvier 2003 à Stockholm (19 ans), est une jeune militante écologiste suédoise engagée dans la lutte contre le réchauffement climatique.Elle est connue parce qu'elle fait chaque vendredi la grève de l'école devant le parlement suédois, mais aussi parce qu'elle a fait des conférences importantes : elle a par exemple pris la parole devant les dirigeants du monde entier lors de la COP24, une conférence organisée par l'ONU en Pologne en décembre 2018, et est intervenue en France à l'Assemblée nationale.",
   },
@@ -22,7 +22,7 @@ let femmes = [
     hint2:
       "le texte étant traduit dans plus de 70 langues5 et serait le livre le plus traduit et le plus lu dans le monde après la Bible",
     bibli:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+      "Anne Frank est l'une des nombreuses victimes juives de la Shoah (l'extermination des Juifs par les nazis).Durant les dernières années de sa vie, la jeune adolescente a écrit un journal intime ,le 12 juin 1942, qui a contribué à faire connaitre son histoire.Anne Frank est née en Allemagne, à Francfort, en 1929. Elle est d'origine juive et vit avec son père Otto, sa mère Edith et sa sœur Margot.Pendant la Seconde Guerre mondiale, elle et sa famille doivent porter une étoile jaune pour montrer qu'ils sont juifs.Puis ils devront vivre cachés, dans des locaux désaffectés de l'entreprise familiale avec une autre famille et un dentiste, àAmsterdam (Pays-Bas) pendant deux ans. Ce sont donc des employés de l'entreprise qui leur s apportent de la nourriture et ils ne peuvent se déplacer que la nuit. Sur dénonciation, la famille Frank sera arrêtée par les nazis et déportée dans des camps. Sa maman mourra au camp d'Auschwitz. Anne et Margot mourront du typhus au camp de Bergen-Belsen en mars 1945. Anne n'a alors que 15 ans.Durant ses deux ans de clandestinité, elle écrira un journal que son père, seul survivant de la famille, publiera en 1947, en néerlandais sous le titre Het Achterhuis : Dagboekbrieven van 12 Juni 1942 - 1 Augustus 1944 (La maison annexe : notes du journal du 12 juin 1942 au 1er août 1944 en français). ",
   },
   {
     id: "3",
@@ -30,10 +30,10 @@ let femmes = [
     nom: "Rosa Parks",
     phrase: "La mère du mouvement des droits civiques",
     dateNaissance: "02/04/1913",
-    hint1: "hint1",
-    hint2: "hint2",
+    hint1: "Rosa Parks n'est pas la première personne de couleur à ne pas obéir aux lois ségrégatives. En mars 1955, Claudette Colvin, âgée de 15 ans, avait été expulsée d'un bus et arrêtée pour avoir refusé de céder sa place à un blanc. Cependant, comme elle est enceinte, sa cause semble difficilement pouvoir servir de modèle pour la lutte",
+    hint2: " Chaque matin, elle doit se rendre à pied dans sa classe car, en vertu des lois Jim Crow, le bus scolaire est alors interdit aux enfants noirs dans les États du Sud des États-Unis.",
     bibli:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+      "Rosa Louise McCauley (Rosa Parks après son mariage) est née le 4 février 1913 à Tuskegee (Alabama) et morte le 24 octobre 2005 (à 92 ans) à Détroit (Michigan). Ses parents se nomment Leona McCauley (sa mère) et James McCauley (son père). Elle est devenue célèbre en 1955, car elle est à l'origine de la lutte pour l'égalité entre les personnes blanches et les gens de couleur aux États-Unis. Elle a refusé de laisser sa place à quelqu'un à la peau blanche dans le bus. En effet, à cette époque, les personnes de couleur noire devaient laisser leur place aux gens à la peau blanche dans le bus. C'est une femme forte et combattante. Elle représente le combat pour la défense des droits civiques des personnes de couleur noires. Elle a fait avancer le monde en luttant contre la ségrégation raciale.",
   },
   {
     id: "4",
@@ -41,10 +41,10 @@ let femmes = [
     nom: "Hatchepsout",
     phrase: "une reine de l'Égypte antique qui deviendra pharaon",
     dateNaissance: "1/1/1000",
-    hint1: "hint1",
-    hint2: "hint2",
+    hint1: "Sa momie a été retrouvée dans la Vallée des Rois par Howard Carter en 1903, puis a été identifiée en 2007",
+    hint2: "Elle a notamment construit son temple,120 sphinx gardent l'entrée du temple.",
     bibli:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+      "Hatchepsout est une femme-pharaon cinquième souverain de la XVIIIe dynastie. Elle est principalement connue pour être une des seules femmes à avoir occupé cette fonction.Elle monte sur le trône à la mort de son mari, le pharaon Thoutmôsis II. En fait, elle règne avec le fils de ce dernier, Thoutmôsis III, alors trop jeune pour diriger seul le royaume.Elle a notamment construit son temple funéraire à Deir el-Bahari, dont le bâtiment principal est le Djeser-Djeserou, avec de magnifiques statues et colonnades sur les terrasses. 120 sphinx gardent l'entrée du temple.Le nom d'Hatchepsout a été martelé et déshonoré après sa mort, peut-être à cause de Thoutmôsis III, son beau-fils.Sa momie a été retrouvée dans la Vallée des Rois par Howard Carter en 1903, puis a été identifiée en 2007. Elle repose au Musée du Caire.",
   },
   {
     id: "5",
@@ -52,8 +52,10 @@ let femmes = [
     nom: "Grace O'Malley",
     phrase: "Une pirate irlandaise",
     dateNaissance: "01/01/1530",
+    hint1: "hint1",
+    hint2: "hint2",
     bibli:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+      "De son nom irlandais Gráinne Ni Mháille, Grace O'Malley nait vers 1530 dans une Irlande dirigée par le roi d'Angleterre Henri VIII mais laissée sous le contrôle des princes et seigneurs irlandais. Grace est la fille de Maeve Ni Mháille et d'Eoghan Dubhdara Ó Mháille, du clan Mháille, établi au nord-ouest du pays. Famille de marins, les O'Malleys contrôlent des châteaux le long de la côte.Grace s'intéresse très tôt à la navigation. D'après la légende, enfant, elle aurait demandé à son père de l'accompagner lors d'un voyage commercial en Espagne. Son père ayant refusé sous prétexte que ses longs cheveux pourraient se prendre dans les cordages du bateau, elle les aurait coupés pour l'obliger à l'emmener. Elle reçoit probablement une bonne éducation, parlant plusieurs langues dont le latin, l'espagnol et le français. Avec son père, elle apprend le commerce mais, malgré son insistance, il n'accepte jamais de l'emmener avec lui.",
   },
 
   {
@@ -70,7 +72,7 @@ let femmes = [
   },
   {
     id: "7",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/NASA_human_computers_-_Katherine_Coleman_Goble_Johnson.jpg/170px-NASA_human_computers_-_Katherine_Coleman_Goble_Johnson.jpg",
+    img: "katherinejohnson.png",
     nom: "Katherine Johnson",
     phrase:
       " reine du royaume de Ndongo et du royaume de Matamba dans l'actuel Angola",
@@ -96,7 +98,7 @@ let femmes = [
 
   {
     id: "9",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Coccinelle_%28cropped%29.jpg/300px-Coccinelle_%28cropped%29.jpg",
+    img: "coccinelle.png",
     nom: "Coccinelle",
     phrase: "C'est l'une des premières femmes trans connues du grand public.",
     dateNaissance: "08/23/1921 ",
