@@ -72,22 +72,19 @@ let femmes = [
     phrase:
       " reine du royaume de Ndongo et du royaume de Matamba dans l'actuel Angola",
     dateNaissance: "01/01/1583 ",
-    hint1: "hint1",
-    hint2: "hint2",
+    hint1:
+      "Njinga de Ndongo est probablement l’une des reines les plus connues de l’histoire de l’Afrique",
+    hint2:
+      "En 2013, à la demande de l'Angola, l'Unesco inscrit la reine Njinga sur la liste des «Femmes dans l'histoire de l'Afrique», à l'occasion du 350e anniversaire de sa mort. ",
     bibli:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+      "Njinga Mbandi (1581 - 1663), reine du Ndongo et du Matamba, a marqué l'histoire de l'Angola du 17e siècle.En 1617, Ngola Mbandi Kiluanji, roi du Ndongo, meurt. Son fils, Ngola Mbandi, devient le nouveau roi. Il n’a cependant ni le charisme de son père, ni l’intelligence de sa sœur Nzinga Mbandi. En 1622, acculé par les Portugais, il envoie Nzinga Mbandi comme ambassadrice à Luanda afin de négocier la paix avec Don Joao Correia De Sousa, vice-roi du Portugal. Njinga s’illustre alors comme une négociatrice et une diplomate hors du commun. En 1624, Ngola Mbandi décède. Njinga prend le pouvoir et devient reine. Dès lors, elle s’impose comme une souveraine exceptionnelle. Sa tactique guerrière et d’espionnage, ses qualités de diplomate, sa capacité à tisser de multiples alliances stratégiques, enfin sa connaissance des enjeux commerciaux et religieux, lui permettront d’opposer une résistance tenace aux projets coloniaux portugais et ce jusqu’à sa mort, en 1663.Njinga de Ndongo et de Matamba est probablement l’une des reines les plus connues de l’histoire de l’Afrique, elle est aujourd’hui souvent présentée comme une icône de la lutte africaine contre l’esclavage et la colonisation européens. ",
   },
 
   {
     id: "7",
     img: "katherinejohnson.png",
     nom: "Katherine Johnson",
-<<<<<<< HEAD
-    phrase: " Mathématicienne afro-américaine et employée de la NASA",
-=======
-    phrase:
-      " Mathématicienne afro-américaine",
->>>>>>> ced8183d7c0be8a2e8eeb534a45faf5591e91fff
+    phrase: " Mathématicienne afro-américaine",
     dateNaissance: "08/26/1918 ",
     hint1: "Elle a été employée par la NASA",
     hint2: "Ses calculs ont permis le lancement de la fusée Apollo 11",
@@ -115,7 +112,8 @@ let femmes = [
     phrase: "C'est l'une des premières femmes trans connues du grand public.",
     dateNaissance: "08/23/1921 ",
     hint1: "Artiste, danseuse, chanteuse et actrice française",
-    hint2: "Elle commence sa carrière moins d'une dizaine d'années après la seconde guerre mondiale",
+    hint2:
+      "Elle commence sa carrière moins d'une dizaine d'années après la seconde guerre mondiale",
     bibli:
       "Coccinelle est le nom de scène de Jacqueline Charlotte Dufresnoy, née le 23 août 1931 à Paris et morte le 9 octobre 2006. Artiste française, danseuse, chanteuse et actrice transgenre, c'est l'une des premières femmes trans connues du grand public. Elle se renomme coccinelle en clin d'oeil à une robe rouge à pois noirs qu'elle portait souvent. Au début des années 50, elle commence à se produire aux cabarets Madame Arthur ou au Carrousel à Paris. Arborant un look inspiré de Marylin Monroe, elle fonde l'association Devenir femmes, qui vient en aide aux personnes transgenres. ",
   },
@@ -123,18 +121,13 @@ let femmes = [
   {
     id: "10",
     img: "baya.png",
-<<<<<<< HEAD
-    nom: "Baya Mahieddine",
-    phrase: "Peintre autodidacte algérienne",
-=======
     nom: "Baya",
-    phrase:
-      "Peintre autodidacte algérienne",
->>>>>>> ced8183d7c0be8a2e8eeb534a45faf5591e91fff
+    phrase: "Peintre autodidacte algérienne",
     dateNaissance: "12/12/1931 ",
     hint1: "Son oeuvre est qualifiée de surréaliste et naïve",
     hint2: "Elle a inspiré Picasso et Matisse",
-    bibli: "Baya, de son vrai nom Fatma Haddad, née le 12 décembre 1931 à Bordj el Kiffan en Algérie et décédée le 9 novembre 1998 est une artiste et peintre algérienne. Orpheline à l'âge de 5 ans, elle habite à 12 ans chez Marguerite Caminat, une peintre française résidant à Alger. Elle réalilse des gouaches et sculpte également l'argile. En 1947 elle est exposée dans une glaerie et capte l'attention des surréalistes. Filles en fleurs, oiseaux multicolores, confusion des robes et des plumages : tels sont les motifs récurrents de son oeuvre. En histoire de l'art, son travail onirique et merveilleux est associé aux catégories 'naïfs', 'primitivisme' et 'art brut'. ",
+    bibli:
+      "Baya, de son vrai nom Fatma Haddad, née le 12 décembre 1931 à Bordj el Kiffan en Algérie et décédée le 9 novembre 1998 est une artiste et peintre algérienne. Orpheline à l'âge de 5 ans, elle habite à 12 ans chez Marguerite Caminat, une peintre française résidant à Alger. Elle réalilse des gouaches et sculpte également l'argile. En 1947 elle est exposée dans une glaerie et capte l'attention des surréalistes. Filles en fleurs, oiseaux multicolores, confusion des robes et des plumages : tels sont les motifs récurrents de son oeuvre. En histoire de l'art, son travail onirique et merveilleux est associé aux catégories 'naïfs', 'primitivisme' et 'art brut'. ",
   },
 
   {
@@ -148,19 +141,20 @@ let femmes = [
     hint2:
       "Tournant le dos très jeune à l'enseignement académique, elle fonde avec Claude Monet, Auguste Renoir, Alfred Sisley, Camille Pissarro, Edgar Degas le groupe d'avant-garde les « Artistes Anonymes Associés »",
     bibli:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+      "Berthe Morisot (1841 – 1895) est une artiste-peintre française liée au mouvement impressionniste. Elle s’est consacrée en particulier aux peintures de femmes, d’enfants et de scènes familiales. Dès 1861, Berthe et sa soeur Edma étudient avec le peintre Jean-Baptiste Camille Corot. Berthe participe à quelques salons où elle expose des paysages. En 1868, Berthe rencontre le peintre Edouard Manet, pour qui elle pose. Elle délaisse alors les salons officiels pour rejoindre les indépendants (futurs impressionnistes), parmi lesquels Renoir, Monet et Sisley. Elle participe avec eux à leur première exposition, en 1874, où 30 artistes (dont Berthe) exposent 200 tableaux. Elle participera ensuite à toutes les expositions impressionnistes.",
   },
 
   {
     id: "12",
     img: "sapho.png",
-    nom: "Sapho",
+    nom: "Sapphô",
     phrase: "Une poétesse grecque",
     dateNaissance: "01/01/1100 ",
     hint1: "Très célèbre durant l'Antiquité",
-    hint2: "hint2",
+    hint2:
+      "Comme les poètes de l’époque, elle est également musicienne et joue de la lyre.",
     bibli:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+      "Sapphô est une poétesse grecque de l’Antiquité qui a vécu aux VIIème siècle et VIème siècle avant JC à Mytilène, sur l’île de Lesbos. Sapphô est connue pour sa poésie amoureuse lyrique, mais elle a également écrit des vers politiques. Comme les poètes de l’époque, elle est également musicienne et joue de la lyre.",
   },
 
   {
@@ -182,7 +176,8 @@ let femmes = [
     phrase: "Pionnière de la science informatique",
     dateNaissance: "12/10/1815 ",
     hint1: "Elle a réalisé le premier véritable programme informatique",
-    hint2: "Elle a travaillé sur un ancêtre de l'ordinateur : la machine analytique de Charles Babbage",
+    hint2:
+      "Elle a travaillé sur un ancêtre de l'ordinateur : la machine analytique de Charles Babbage",
     bibli:
       "Fille d'un poète britannique (lord Byron) et d'une amatrice de mathématiques (Anne Isabelle Milbanke), elle nait le 10 décembre 1815 à Londres et témoigne, comme sa mère, d'un grand intérêt pour les mathématiques. Elle rencontre Charles Babbage, inventeur de la 'machine analytique', système capable de réaliser une série de calculs établis à l'avance et inscrits sur des cartes perforées, considéré comme le précurseur des ordinateurs. Elle a réalisé les premières ébauches d'une écriture formelle des instructions à employer avec cette machine analytique. Elle a travaillé sur ce qu'on appelle aujourd'hui un langage informatique, dont un porte son nom. Elle meurt le 27 novembre 1852. ",
   },
@@ -193,8 +188,10 @@ let femmes = [
     nom: "Jane Goodall",
     phrase: "Primatologue et anthropologue anglaise",
     dateNaissance: "04/03/1934 ",
-    hint1: "première scientifique à avoir observé que les chimpanzés utilisent des outils pour s'alimenter",
-    hint2: "elle a été nommée messagère de la paix par le secrétaire général de l'ONU",
+    hint1:
+      "première scientifique à avoir observé que les chimpanzés utilisent des outils pour s'alimenter",
+    hint2:
+      "elle a été nommée messagère de la paix par le secrétaire général de l'ONU",
     bibli:
       "Jane Goodall, née le 3 avril 1934 à Londres, en Angleterre, est une pionnière dans les recherches sur les rapports humain-animal et s'investit depuis toute petite dans la préservation de la vie animale sauvage d'Afrique. D'une petite fille rêveuse, Jane a grandi pour devenir une scientifique aventurière doublée d'une activiste. Elle est aujourd'hui primatologue, anthroplogue et éthologue reconnue à travers le monde entier. Elle a reçu de nombreuses distinctions et a été la première scientifique à avoir observé que les chimpanzés utilisent des outils pour s'alimenter.",
   },
