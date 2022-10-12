@@ -82,12 +82,17 @@ let femmes = [
     id: "7",
     img: "katherinejohnson.png",
     nom: "Katherine Johnson",
+<<<<<<< HEAD
     phrase: " Mathématicienne afro-américaine et employée de la NASA",
+=======
+    phrase:
+      " Mathématicienne afro-américaine",
+>>>>>>> ced8183d7c0be8a2e8eeb534a45faf5591e91fff
     dateNaissance: "08/26/1918 ",
-    hint1: "hint1",
-    hint2: "hint2",
+    hint1: "Elle a été employée par la NASA",
+    hint2: "Ses calculs ont permis le lancement de la fusée Apollo 11",
     bibli:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+      "Katherine Johnson, née le 26 août 1918 à White Sulphur Springs en Virginie Occidentale et décédée le 24 février 2020, est une physicienne, mathématicienne et ingénieure spatiale américaine. Elle contribue aux programmes aéronautiques et spatiaux de la NASA. Elle a contribué à l'envoi du premier humain sur la Lune. Réputée pour la fiabilité de ses calculs en navigation astronomique, elle conduit des travaux techniques à la NASA sur des décennies et reçoit en 2015 la médaille présidentielle de la Liberté et en 2019 la médaille d'or du Congrès des Etats-Unis. Elle fait partie des femmes qui ont inspiré le film 'Hidden Figures'.",
   },
 
   {
@@ -97,10 +102,10 @@ let femmes = [
     phrase: "une danseuse et chorégraphe allemande",
     dateNaissance: "07/27/1940 ",
     hint1:
-      "Pina Bausch est considérée comme l'une des principales figures de la danse contemporaine et de la danse-théâtre.",
-    hint2: "hint2",
+      "Pina Bausch est considérée comme l'une des principales figures de la danse contemporaine.",
+    hint2: "Elle est l'instigatrice du concept de danse-théâtre.",
     bibli:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+      "Pina Bausch, née le 27 juillet 1940 à Solingen en Allemagne et décédéele 30 juin 2009, est une danseuse et chorégraphe. Fondatrice de la compagnie Tanztheater Wuppertal, c'est l'une des principales figures de la danse contemporaine et de la danse-théâtre. Contrairement à ses contemporains, Pina Bausch travilles non pas par rapport à des formes à reproduire, des pas bien définis, mais par rapport à l'anatomie du corps de chacun, aux possibilités qui sont données ou non aux corps. Elle dénonce les codes de la séduction, la solitude dans le couple et travaille sur la communication dans les rapports hommes-femmes.",
   },
 
   {
@@ -109,21 +114,27 @@ let femmes = [
     nom: "Coccinelle",
     phrase: "C'est l'une des premières femmes trans connues du grand public.",
     dateNaissance: "08/23/1921 ",
-    hint1: "hint1",
-    hint2: "hint2",
+    hint1: "Artiste, danseuse, chanteuse et actrice française",
+    hint2: "Elle commence sa carrière moins d'une dizaine d'années après la seconde guerre mondiale",
     bibli:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+      "Coccinelle est le nom de scène de Jacqueline Charlotte Dufresnoy, née le 23 août 1931 à Paris et morte le 9 octobre 2006. Artiste française, danseuse, chanteuse et actrice transgenre, c'est l'une des premières femmes trans connues du grand public. Elle se renomme coccinelle en clin d'oeil à une robe rouge à pois noirs qu'elle portait souvent. Au début des années 50, elle commence à se produire aux cabarets Madame Arthur ou au Carrousel à Paris. Arborant un look inspiré de Marylin Monroe, elle fonde l'association Devenir femmes, qui vient en aide aux personnes transgenres. ",
   },
 
   {
     id: "10",
     img: "baya.png",
+<<<<<<< HEAD
     nom: "Baya Mahieddine",
     phrase: "Peintre autodidacte algérienne",
+=======
+    nom: "Baya",
+    phrase:
+      "Peintre autodidacte algérienne",
+>>>>>>> ced8183d7c0be8a2e8eeb534a45faf5591e91fff
     dateNaissance: "12/12/1931 ",
     hint1: "Son oeuvre est qualifiée de surréaliste et naïve",
     hint2: "Elle a inspiré Picasso et Matisse",
-    bibli: "",
+    bibli: "Baya, de son vrai nom Fatma Haddad, née le 12 décembre 1931 à Bordj el Kiffan en Algérie et décédée le 9 novembre 1998 est une artiste et peintre algérienne. Orpheline à l'âge de 5 ans, elle habite à 12 ans chez Marguerite Caminat, une peintre française résidant à Alger. Elle réalilse des gouaches et sculpte également l'argile. En 1947 elle est exposée dans une glaerie et capte l'attention des surréalistes. Filles en fleurs, oiseaux multicolores, confusion des robes et des plumages : tels sont les motifs récurrents de son oeuvre. En histoire de l'art, son travail onirique et merveilleux est associé aux catégories 'naïfs', 'primitivisme' et 'art brut'. ",
   },
 
   {
@@ -168,12 +179,12 @@ let femmes = [
     id: "14",
     img: "adalovelace.png",
     nom: "Ada Lovelace",
-    phrase: "Considérée comme la première programmeuse en informatique",
+    phrase: "Pionnière de la science informatique",
     dateNaissance: "12/10/1815 ",
-    hint1: "hint1",
-    hint2: "hint2",
+    hint1: "Elle a réalisé le premier véritable programme informatique",
+    hint2: "Elle a travaillé sur un ancêtre de l'ordinateur : la machine analytique de Charles Babbage",
     bibli:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+      "Fille d'un poète britannique (lord Byron) et d'une amatrice de mathématiques (Anne Isabelle Milbanke), elle nait le 10 décembre 1815 à Londres et témoigne, comme sa mère, d'un grand intérêt pour les mathématiques. Elle rencontre Charles Babbage, inventeur de la 'machine analytique', système capable de réaliser une série de calculs établis à l'avance et inscrits sur des cartes perforées, considéré comme le précurseur des ordinateurs. Elle a réalisé les premières ébauches d'une écriture formelle des instructions à employer avec cette machine analytique. Elle a travaillé sur ce qu'on appelle aujourd'hui un langage informatique, dont un porte son nom. Elle meurt le 27 novembre 1852. ",
   },
 
   {
@@ -182,10 +193,10 @@ let femmes = [
     nom: "Jane Goodall",
     phrase: "Primatologue et anthropologue anglaise",
     dateNaissance: "04/03/1934 ",
-    hint1: "hint1",
-    hint2: "hint2",
+    hint1: "première scientifique à avoir observé que les chimpanzés utilisent des outils pour s'alimenter",
+    hint2: "elle a été nommée messagère de la paix par le secrétaire général de l'ONU",
     bibli:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+      "Jane Goodall, née le 3 avril 1934 à Londres, en Angleterre, est une pionnière dans les recherches sur les rapports humain-animal et s'investit depuis toute petite dans la préservation de la vie animale sauvage d'Afrique. D'une petite fille rêveuse, Jane a grandi pour devenir une scientifique aventurière doublée d'une activiste. Elle est aujourd'hui primatologue, anthroplogue et éthologue reconnue à travers le monde entier. Elle a reçu de nombreuses distinctions et a été la première scientifique à avoir observé que les chimpanzés utilisent des outils pour s'alimenter.",
   },
 
   {
