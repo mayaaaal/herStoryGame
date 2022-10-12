@@ -70,10 +70,10 @@ let femmes = [
   },
   {
     id: "7",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/NASA_human_computers_-_Katherine_Coleman_Goble_Johnson.jpg/170px-NASA_human_computers_-_Katherine_Coleman_Goble_Johnson.jpg",
+    img: "katherinejohnson.png",
     nom: "Katherine Johnson",
     phrase:
-      " reine du royaume de Ndongo et du royaume de Matamba dans l'actuel Angola",
+      " Mathématicienne afro-américaine et employée de la NASA",
     dateNaissance: "08/26/1918 ",
     hint1: "hint1",
     hint2: "hint2",
@@ -96,7 +96,7 @@ let femmes = [
 
   {
     id: "9",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Coccinelle_%28cropped%29.jpg/300px-Coccinelle_%28cropped%29.jpg",
+    img: "coccinelle.png",
     nom: "Coccinelle",
     phrase: "C'est l'une des premières femmes trans connues du grand public.",
     dateNaissance: "08/23/1921 ",
@@ -109,12 +109,13 @@ let femmes = [
   {
     id: "10",
     img: "baya.png",
-    nom: "Baya",
+    nom: "Baya Mahieddine",
     phrase:
-      "Peintre autodidacte algérienne, surréaliste et naïve, a inspiré Picasso et Matisse",
+      "Peintre autodidacte algérienne",
     dateNaissance: "12/12/1931 ",
-    hint1: "hint1",
-    hint2: "hint2",
+    hint1: "Son oeuvre est qualifiée de surréaliste et naïve",
+    hint2: "Elle a inspiré Picasso et Matisse",
+    bibli: "",
   },
 
   {
@@ -155,4 +156,53 @@ let femmes = [
     bibli:
       "Elle est née en 1907 à Coyoacán au Mexique. À l'âge de 6 ans, elle est malade de la polio ce qui la laisse handicapée; certains spécialistes pensent qu'elle devait souffrir d'une malformation de naissance, empêchant le bon développement de sa colonne vertébrale.Elle commence à étudier la médecine pour devenir médecin mais, à l'âge de 18 ans, elle est victime d'un grave accident de la circulation dans lequel son bus percute un métro. Pendant toute sa vie, elle garde de cet accident des périodes de grande douleur physique. Elle abandonne alors ses études de médecine et commence à peindre, s'inspirant des évènements survenus dans sa vie.Sa famille aménage un lit à baldaquin avec un miroir accroché à l'horizontale car elle est immobilisée dans son lit suite à son accident. Grâce à ceci Frida Kahlo a pu peindre 55 autoportraits sur 143 tableaux.Ses tableaux montrent sa douleur et la vie difficile des femmes, en particulier ses regrets de ne pas pouvoir être mère.Elle épouse Diego Rivera en 1929, mais ils ont chacun de leur côté des aventures amoureuses. Tous deux sont membres du Parti communiste mexicain. En 1937, ils accueillent pendant quelques semaines dans leur demeure le révolutionnaire russe Léon Trotsky et son épouse Natalia : Trotsky a été expulsé en 1929 de l'Union Soviétique par Staline, et le Mexique vient de lui accorder l'asile politique. Rivera et Frida Kahlo divorcent en 1939 (Rivera aurait eu une liaison avec Cristina Kahlo, la propre sœur de Frida), mais ils se remarient ensemble en 1940 et leur union dure jusqu'à la mort de Frida Kahlo, en 1954, des suites d'une embolie pulmonaire à l'âge de 47 ans.",
   },
+
+  {
+    id: "14",
+    img: "adalovelace.png",
+    nom: "Ada Lovelace",
+    phrase: "Considérée comme la première programmeuse en informatique",
+    dateNaissance: "12/10/1815 ",
+    hint1: "hint1",
+    hint2: "hint2",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+  },
+
+  {
+    id: "15",
+    img: "janegoodall.png",
+    nom: "Jane Goodall",
+    phrase: "Primatologue et anthropologue anglaise",
+    dateNaissance: "04/03/1934 ",
+    hint1: "hint1",
+    hint2: "hint2",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+  },
+
+  {
+    id: "16",
+    img: "mariamontessori.png",
+    nom: "Maria Montessori",
+    phrase: "Une éducatrice italienne célèbre pour sa méthode",
+    dateNaissance: "08/31/1870 ",
+    hint1: "hint1",
+    hint2: "hint2",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+  },
+
+  {
+    id: "17",
+    img: "mariecurie.png",
+    nom: "Marie Curie",
+    phrase: "Une célèbre chimiste franco-polonaise",
+    dateNaissance: "11/07/1867 ",
+    hint1: "hint1",
+    hint2: "hint2",
+    bibli:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis sunt repudiandae maxime consectetur, suscipit architecto, optio, harum doloremque obcaecati magnam dolorum aperiam similique quis velit. Possimus ea beatae aliquam.Laudantium aliquid illo, fuga quidem commodi fugiat earum hic eligendi possimus dolorum soluta non corrupti tenetur sequi obcaecati dolor nam velit provident odio quis quisquam blanditiis mollitia laboriosam! Ullam, quas.",
+  },
 ];
+
