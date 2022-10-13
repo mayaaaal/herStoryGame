@@ -1,8 +1,4 @@
 "use strict";
-let score;
-let fullScore = femmes.length;
-let totalScore = fullScore - score;
-
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -29,8 +25,9 @@ for (let i = 0; i < femmes.length; i++) {
   CreerCard(femmes[i], i);
 }
 
+//cards creation from data in fammes array
+
 function CreerCard(femmes, index) {
-  score=0;
   let date = new Date(femmes.dateNaissance);
   let year = date.getFullYear();
   const folder = "assets/images/";
@@ -40,6 +37,7 @@ function CreerCard(femmes, index) {
     <div class="draggable" index ="${index}" year="${Date.parse(
     femmes.dateNaissance
   )}">
+
   <div class="dateDiv">${year}</div>
     <div class="property-card carte" year="${Date.parse(
       femmes.dateNaissance
@@ -74,8 +72,9 @@ let myModal;
 let pulp = document.getElementById("pulp");
 let bibli = document.getElementById("bibli");
 let mesCards = document.getElementById("mesCards");
-
-
+let gameEnd = document.getElementById("endGame");
+let score;
+let fullScore = femmes.length;
 
 //scrol while drag over timeline
 
@@ -90,7 +89,7 @@ timeline.addEventListener("dragover", (e) => {
   }
 });
 
-//drag 
+//drag
 
 draggables.forEach((draggable) => {
   draggable.addEventListener("dragstart", (e) => {
@@ -112,26 +111,29 @@ draggables.forEach((draggable) => {
       ? parseInt(target.nextElementSibling.getAttribute("year"))
       : null;
 
-      //logic of sorting card by chronologic order
+    //logic of sorting card by chronologic order
 
     if (elementBe === null || elementAf === null) {
       // premier card
       if (
-        //first card in the right place 
+        //first card in the right place
         (elementBe === null && elementTa < elementAf) ||
-        //last card in the right place 
+        //last card in the right place
         (elementAf === null && elementTa > elementBe)
       ) {
         draggable.classList.remove("dragging", "wrong");
 
         draggable.classList.add("right");
         tries = 0;
+        score += 1;
+        console.log(score);
         checkEndGame();
       } else {
         //if it's wrong
         draggable.classList.remove("right");
         draggable.classList.add("wrong");
         triesHandler(draggable);
+        checkEndGame();
       }
     } else if (elementTa > elementBe && elementTa < elementAf) {
       // between cards
@@ -139,10 +141,13 @@ draggables.forEach((draggable) => {
       draggable.classList.add("right");
       tries = 0;
       checkEndGame();
+      score += 1;
+      console.log(score);
     } else {
       console.log("no place");
       draggable.classList.remove("right");
       triesHandler(draggable);
+      checkEndGame();
     }
   });
 });
@@ -176,30 +181,40 @@ function getDragAfterElement(container, X) {
   ).element;
 }
 
+//modaml - pulpette say somthing or end of the game
+
 const modal = document.querySelector(".speechBubble");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".close-speechBubble");
-const openModal = function (hint) {
+
+const openModal = function (msg) {
   pulp.classList.remove("stopSpeech");
   pulp.classList.add("speech");
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
   const message = document.querySelector(".message");
-  message.innerText = hint;
+  message.innerText = msg;
 };
 
 const closeModal = function () {
-  if (pulp.classList.contains("speech")) {
+  if (
+    pulp.classList.contains("speech") ||
+    !gameEnd.classList.contains("hidden")
+  ) {
     pulp.classList.remove("speech");
     pulp.classList.add("stopSpeech");
+    gameEnd.classList.add("hidden");
   }
 
   modal.classList.add("hidden");
   bibli.classList.add("hidden");
+  gameEnd.classList.add("hidden");
   overlay.classList.add("hidden");
 };
 
-overlay.addEventListener("click", closeModal);
+overlay.addEventListener("click", () => {
+  closeModal();
+});
 btnCloseModal.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (e) {
@@ -210,6 +225,8 @@ document.addEventListener("keydown", function (e) {
     closeModal();
   }
 });
+
+//wrong answer numbre of tries and clus
 
 function triesHandler(card) {
   tries += 1;
@@ -222,9 +239,6 @@ function triesHandler(card) {
   } else {
     document.querySelector(".lost").prepend(card);
     tries = 0;
-    score -=1;
-    console.log(score);
-    console.log(totalScore);
   }
 }
 
@@ -258,25 +272,43 @@ slider.addEventListener("mousemove", (e) => {
   console.log(walk);
 });
 
+window.addEventListener("wheel", (evt) => {
+  evt.preventDefault();
+  slider.scrollLeft += evt.deltaY;
+});
+
+// check if there are more cards in the pille
+
 function checkEndGame() {
   if (pile.childElementCount == 0) {
-    console.log(`${totalScore}/${fullScore}`);
+    //if not calling game over
     gameOver();
   } else {
-    score+=1;
-    console.log(score);
-   
     console.log("check");
   }
 }
+
+//end of the game - fireworks modal of end of the game with final score and play agin button
 
 function gameOver() {
   fire();
   let canvas = document.querySelector("canvas");
   canvas.classList.remove("hidden");
 
-  
+  if (gameEnd.classList.contains("hidden")) {
+    gameEnd.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+    let finalScore = document.getElementById("finalScore");
+    finalScore.innerText = `${score}/${fullScore}`;
+    let btnRestart = document.getElementById("restart");
+    btnRestart.addEventListener("click", () => {});
+  } else {
+    gameEnd.classList.add("hidden");
+    overlay.classList.add("hidden");
+  }
 }
+
+//text to speech
 
 let speech = new SpeechSynthesisUtterance();
 speech.lang = "fr";
@@ -318,7 +350,7 @@ function getCookie(cname) {
 function checkCookie() {
   let user = getCookie("username");
   if (user != "") {
-    alert("Welcome again " + user);
+    openModal("Rébonjour " + user);
   } else {
     myModal.show();
   }
@@ -366,11 +398,17 @@ function checkCookie() {
 
 //start
 
+//login modal
+
 $(document).ready(function () {
   myModal = new bootstrap.Modal(document.getElementById("staticBackdrop"), {
     keyboard: false,
   });
   checkCookie();
+
+  score = 0;
+
+  //animation of the bird
 
   $("#img7").on("mouseover", function () {
     let startLeft = $(this).css("left");

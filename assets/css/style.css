@@ -348,7 +348,12 @@ p {
   z-index: 10;
 }
 
-.speechBubble :after {
+.speechBubble p{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.speechBubble:after {
   content: "";
   position: absolute;
   display: block;
@@ -368,8 +373,8 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(1px);
   z-index: 5;
 }
 
@@ -515,4 +520,47 @@ header h2 {
   font-weight: bold;
   font-size: 38px;
   top: 26px;
+}
+
+
+#endGame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  /* background-color: cadetblue; */
+  width: 40%;
+  height: 70vh;
+  background-color: white;
+  padding: 6rem;
+  border-radius: 30px;
+  box-shadow: 0 3rem 5rem rgb(0 0 0 / 30%);
+  z-index: 10;
+}
+
+#endGame.hidden {
+  display: none;
+}
+
+button#talk{
+  border: none;
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  
+}
+
+
+button#talk svg{
+
+  width: 65px;
+  height: 65px;
+
+}
+
+button#talk svg:hover{
+fill: darkorchid;
+
 }
