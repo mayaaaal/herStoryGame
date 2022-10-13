@@ -348,7 +348,12 @@ p {
   z-index: 10;
 }
 
-.speechBubble :after {
+.speechBubble p{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.speechBubble:after {
   content: "";
   position: absolute;
   display: block;
@@ -369,7 +374,7 @@ p {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(1px);
   z-index: 5;
 }
 
@@ -537,4 +542,25 @@ header h2 {
 
 #endGame.hidden {
   display: none;
+}
+
+button#talk{
+  border: none;
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  
+}
+
+
+button#talk svg{
+
+  width: 65px;
+  height: 65px;
+
+}
+
+button#talk svg:hover{
+fill: darkorchid;
+
 }
