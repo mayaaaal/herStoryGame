@@ -45,9 +45,9 @@ function CreerCard(femmes, index) {
                   
                   <div class="property-image">
                       <img draggable="false" src="${
-                        !femmes.img.includes("http")
-                          ? folder + femmes.img
-                          : femmes.img
+                   
+                         folder + femmes.img
+                         
                       }"/>
                       </div>
                       <div class="property-description">
@@ -295,6 +295,15 @@ function gameOver() {
   let canvas = document.querySelector("canvas");
   canvas.classList.remove("hidden");
 
+
+
+  // const xhr = new XMLHttpRequest();
+  // xhr.open("post", "http://localhost/herStoryGame/login.php");
+  // const fd = new FormData();
+  // fd.append("name", $("#formInputname").val());
+  // fd.append("nickname", $("#formInputNickname").val());
+  // xhr.send(fd);
+
   if (gameEnd.classList.contains("hidden")) {
     gameEnd.classList.remove("hidden");
     overlay.classList.remove("hidden");
@@ -307,6 +316,11 @@ function gameOver() {
     overlay.classList.add("hidden");
   }
 }
+
+let restartBtn = document.getElementById("restart");
+restartBtn.addEventListener("click",()=>{
+  restart();
+})
 
 //text to speech
 
@@ -426,3 +440,17 @@ $(document).ready(function () {
     );
   });
 });
+
+
+//restart
+
+function restart(){
+  score=0
+  // finalScore=0
+  
+  timeline.innerHTML="";
+  shuffle(femmes);
+for (let i = 0; i < femmes.length; i++) {
+  CreerCard(femmes[i], i);
+}
+}

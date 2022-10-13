@@ -13,7 +13,7 @@ function creerBiblioCard(femmes, index) {
   <div class="flipper">
     <div class="front">
       <div class="card b"><img src="${
-        !femmes.img.includes("http") ? folder + femmes.img : femmes.img
+       folder + femmes.img
       }"></div>
       <!-- front content -->
     </div>
@@ -21,7 +21,9 @@ function creerBiblioCard(femmes, index) {
       <div class="card k">
         <h4>${femmes.nom}</h4>
         <h5>${year}</h5>
+        <div id="textContainer">
         <p>${femmes.bibli}</p>
+        </div>
       </div>
 
       <!-- back content -->

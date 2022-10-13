@@ -55,6 +55,7 @@
 .card p {
   font-size: 1em;
   text-align: justify;
+  overflow: hidden;
 }
 .card.g {
   background-color: red;
@@ -220,4 +221,12 @@
 .card.b img {
   object-fit: cover;
   height: 100%;
+}
+
+#textContainer{
+  width: 90%;
+  height: 90%;
+  overflow: scroll;
+    margin: auto;
+ 
 }
