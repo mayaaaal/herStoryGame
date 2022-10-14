@@ -223,10 +223,13 @@
   height: 100%;
 }
 
-#textContainer{
+#textContainer {
   width: 90%;
   height: 90%;
+  overflow: hidden;
+  margin: auto;
+}
+#textCner p {
   overflow: scroll;
-    margin: auto;
- 
+  margin: auto;
 }

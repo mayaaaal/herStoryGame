@@ -44,11 +44,7 @@ function CreerCard(femmes, index) {
     )}" id="maCard${femmes.id}" index ="${index}" draggable = 'true'">
                   
                   <div class="property-image">
-                      <img draggable="false" src="${
-                   
-                         folder + femmes.img
-                         
-                      }"/>
+                      <img draggable="false" src="${folder + femmes.img}"/>
                       </div>
                       <div class="property-description">
                       <h2>${femmes.nom}</h2>
@@ -273,8 +269,8 @@ slider.addEventListener("mousemove", (e) => {
 });
 
 window.addEventListener("wheel", (evt) => {
-  evt.preventDefault();
-  slider.scrollLeft += evt.deltaY;
+  // evt.preventDefault();
+  // slider.scrollLeft += evt.deltaY;
 });
 
 // check if there are more cards in the pille
@@ -294,8 +290,6 @@ function gameOver() {
   fire();
   let canvas = document.querySelector("canvas");
   canvas.classList.remove("hidden");
-
-
 
   // const xhr = new XMLHttpRequest();
   // xhr.open("post", "http://localhost/herStoryGame/login.php");
@@ -318,9 +312,9 @@ function gameOver() {
 }
 
 let restartBtn = document.getElementById("restart");
-restartBtn.addEventListener("click",()=>{
+restartBtn.addEventListener("click", () => {
   restart();
-})
+});
 
 //text to speech
 
@@ -441,16 +435,15 @@ $(document).ready(function () {
   });
 });
 
-
 //restart
 
-function restart(){
-  score=0
+function restart() {
+  score = 0;
   // finalScore=0
-  
-  timeline.innerHTML="";
+
+  timeline.innerHTML = "";
   shuffle(femmes);
-for (let i = 0; i < femmes.length; i++) {
-  CreerCard(femmes[i], i);
-}
+  for (let i = 0; i < femmes.length; i++) {
+    CreerCard(femmes[i], i);
+  }
 }
