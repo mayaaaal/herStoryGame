@@ -241,9 +241,7 @@ p {
   font-weight: bold;
 }
 
-.carte p {
-  font-size: 0.8em;
-}
+
 
 .carte img {
   width: 100%;
@@ -304,7 +302,6 @@ p {
   margin-top: 100px;
   flex-shrink: 0;
   border-top: 1px solid yellow;
-
   white-space: nowrap;
 }
 #timeLine::before,
@@ -564,3 +561,5 @@ button#talk svg:hover{
 fill: darkorchid;
 
 }
+
+

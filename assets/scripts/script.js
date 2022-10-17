@@ -299,18 +299,25 @@ function gameOver() {
   let canvas = document.querySelector("canvas");
   canvas.classList.remove("hidden");
 
-  // const xhr = new XMLHttpRequest();
-  // xhr.open("post", "http://localhost/herStoryGame/login.php");
-  // const fd = new FormData();
-  // fd.append("name", $("#formInputname").val());
-  // fd.append("nickname", $("#formInputNickname").val());
-  // xhr.send(fd);
+  const xhr = new XMLHttpRequest();
+  xhr.open("post", "http://localhost/herStoryGame/scores.php");
+  const fd = new FormData();
+  fd.append("userID", getCookie("userID"));
+  fd.append("score", score);
+  xhr.send(fd);
+
+  xhr.onload = ({ target }) => {
+    let scoreData = JSON.parse(target.responseText);
+    let finalScore = document.getElementById("finalScore");
+    finalScore.innerText = `${score}/${fullScore}\n ${
+      scoreData.numOfTims
+    }/${parseInt(scoreData.avarage)}`;
+  };
 
   if (gameEnd.classList.contains("hidden")) {
     gameEnd.classList.remove("hidden");
     overlay.classList.remove("hidden");
-    let finalScore = document.getElementById("finalScore");
-    finalScore.innerText = `${score}/${fullScore}`;
+
     let btnRestart = document.getElementById("restart");
     btnRestart.addEventListener("click", () => {});
   } else {
@@ -366,7 +373,7 @@ function getCookie(cname) {
 function checkCookie() {
   let user = getCookie("username");
   if (user != "") {
-    openModal("Rébonjour " + user);
+    openModal("Rebonjour " + user);
   } else {
     myModal.show();
   }
@@ -400,9 +407,11 @@ function checkCookie() {
         fd.append("nickname", $("#formInputNickname").val());
         xhr.send(fd);
         xhr.onload = ({ target }) => {
-          if (target.responseText === "OK") {
+          let user = JSON.parse(target.responseText);
+          if (user.id != -1) {
             myModal.hide();
-            setCookie("username", $("#formInputname").val(), 2);
+            setCookie("username", $("#formInputNickname").val(), 2);
+            setCookie("userID", user.id, 2);
           } else {
           }
         };

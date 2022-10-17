@@ -91,6 +91,18 @@
 .card p {
   padding: 0px;
   margin-top: 0px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.card .h4,
+h4 {
+  font-weight: bold;
+  margin: 4%;
+}
+.card h5 {
+  margin: 0 4% 9px 4%;
+  font-size: 1.1em;
+  font-weight: 700;
 }
 
 .flip-container .card {
@@ -234,7 +246,12 @@
   overflow: hidden;
   margin: auto;
 }
-#textCner p {
-  overflow: scroll;
+#textContainer p {
   margin: auto;
+}
+
+#bibli button#talk svg {
+  bottom: 8%;
+  position: absolute;
+  left: 8%;
 }
