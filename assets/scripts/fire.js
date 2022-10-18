@@ -1,7 +1,12 @@
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
 // not supported in all browsers though and sometimes needs a prefix, so we need a shim
+let stopAnimation = false;
 
+function stopFire() {
+  stopAnimation = true;
+}
 function fire() {
+  stopAnimation = false;
   window.requestAnimFrame = (function () {
     return (
       window.requestAnimationFrame ||
@@ -219,6 +224,9 @@ function fire() {
   // main demo loop
   function loop() {
     // this function will run endlessly with requestAnimationFrame
+    if (stopAnimation) {
+      return;
+    }
     requestAnimFrame(loop);
 
     // increase the hue to get different colored fireworks over time

@@ -20,11 +20,6 @@ function shuffle(array) {
   return array;
 }
 
-shuffle(femmes);
-for (let i = 0; i < femmes.length; i++) {
-  CreerCard(femmes[i], i);
-}
-
 //cards creation from data in fammes array
 
 function CreerCard(femmes, index) {
@@ -44,11 +39,7 @@ function CreerCard(femmes, index) {
     )}" id="maCard${femmes.id}" index ="${index}" draggable = 'true'">
                   
                   <div class="property-image">
-                      <img draggable="false" src="${
-                        !femmes.img.includes("http")
-                          ? folder + femmes.img
-                          : femmes.img
-                      }"/>
+                      <img draggable="false" src="${folder + femmes.img}"/>
                       </div>
                       <div class="property-description">
                       <h2>${femmes.nom}</h2>
@@ -63,7 +54,7 @@ function CreerCard(femmes, index) {
 }
 
 //drag and drop
-const draggables = document.querySelectorAll(".draggable");
+let draggables = document.querySelectorAll(".draggable");
 const containers = document.querySelectorAll(".dropZone");
 let timeline = document.getElementById("timeLine");
 let pile = document.getElementById("mesCards");
@@ -79,7 +70,6 @@ let fullScore = femmes.length;
 //scrol while drag over timeline
 
 timeline.addEventListener("dragover", (e) => {
-  console.log(e.clientX);
   if (e.clientX < 200) {
     slider.scrollLeft = slider.scrollLeft - 50;
   } else if (e.clientX > window.innerWidth - 200) {
@@ -91,66 +81,80 @@ timeline.addEventListener("dragover", (e) => {
 
 //drag
 
-draggables.forEach((draggable) => {
-  draggable.addEventListener("dragstart", (e) => {
-    isDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-    draggable.classList.add("dragging");
-    draggable.classList.remove("wrong");
-    draggable.classList.remove("right");
-  });
+function handleCardDrop(target, draggable) {
+  let yearBefore = target.previousElementSibling
+    ? parseInt(target.previousElementSibling.getAttribute("year"))
+    : null;
+  let targetYear = parseInt(target.getAttribute("year"));
+  let yearAfter = target.nextElementSibling
+    ? parseInt(target.nextElementSibling.getAttribute("year"))
+    : null;
 
-  draggable.addEventListener("dragend", (e) => {
-    let target = e.currentTarget;
-    let elementBe = target.previousElementSibling
-      ? parseInt(target.previousElementSibling.getAttribute("year"))
-      : null;
-    let elementTa = parseInt(target.getAttribute("year"));
-    let elementAf = target.nextElementSibling
-      ? parseInt(target.nextElementSibling.getAttribute("year"))
-      : null;
+  //logic of sorting card by chronologic order
 
-    //logic of sorting card by chronologic order
-
-    if (elementBe === null || elementAf === null) {
-      // premier card
-      if (
-        //first card in the right place
-        (elementBe === null && elementTa < elementAf) ||
-        //last card in the right place
-        (elementAf === null && elementTa > elementBe)
-      ) {
-        draggable.classList.remove("dragging", "wrong");
-
-        draggable.classList.add("right");
-        tries = 0;
-        score += 1;
-        console.log(score);
-        checkEndGame();
-      } else {
-        //if it's wrong
-        draggable.classList.remove("right");
-        draggable.classList.add("wrong");
-        triesHandler(draggable);
-        checkEndGame();
-      }
-    } else if (elementTa > elementBe && elementTa < elementAf) {
-      // between cards
+  if (yearBefore === null || yearAfter === null) {
+    // premier card
+    if (
+      //first card in the right place
+      (yearBefore === null && targetYear < yearAfter) ||
+      //last card in the right place
+      (yearAfter === null && targetYear > yearBefore)
+    ) {
       draggable.classList.remove("dragging", "wrong");
+
       draggable.classList.add("right");
       tries = 0;
-      checkEndGame();
       score += 1;
-      console.log(score);
+
+      checkEndGame();
     } else {
-      console.log("no place");
+      //if it's wrong
       draggable.classList.remove("right");
+      draggable.classList.add("wrong");
       triesHandler(draggable);
       checkEndGame();
     }
+  } else if (targetYear > yearBefore && targetYear < yearAfter) {
+    // between cards
+    draggable.classList.remove("dragging", "wrong");
+    draggable.classList.add("right");
+    tries = 0;
+    checkEndGame();
+    score += 1;
+  } else {
+    draggable.classList.remove("right");
+    triesHandler(draggable);
+    checkEndGame();
+  }
+}
+
+function init() {
+  score = 0;
+  timeline.innerHTML = "";
+
+  shuffle(femmes);
+  for (let i = 0; i < femmes.length; i++) {
+    CreerCard(femmes[i], i);
+  }
+  draggables = document.querySelectorAll(".draggable");
+  draggables.forEach((draggable) => {
+    draggable.addEventListener("dragstart", (e) => {
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+      draggable.classList.add("dragging");
+      draggable.classList.remove("wrong");
+      draggable.classList.remove("right");
+    });
+
+    draggable.addEventListener("dragend", (e) => {
+      let target = e.currentTarget;
+      handleCardDrop(target, draggable);
+    });
   });
-});
+}
+
+///////////////////////////////////////////////:::
 containers.forEach((container) => {
   container.addEventListener("dragover", (e) => {
     e.preventDefault();
@@ -163,6 +167,8 @@ containers.forEach((container) => {
     }
   });
 });
+
+/////////////////////////////////////////////////////:
 function getDragAfterElement(container, X) {
   const draggabeElements = [
     ...container.querySelectorAll(".draggable:not(.dragging)"),
@@ -232,7 +238,7 @@ function triesHandler(card) {
   tries += 1;
   if (tries < 3) {
     let index = parseInt(card.getAttribute("index"));
-    console.log(femmes[index]);
+
     let hint = tries < 2 ? femmes[index].hint1 : femmes[index].hint2;
     document.getElementById("mesCards").prepend(card);
     openModal(hint);
@@ -269,7 +275,6 @@ slider.addEventListener("mousemove", (e) => {
   const x = e.pageX - slider.offsetLeft;
   const walk = (x - startX) * 1.5; //scroll-fast
   slider.scrollLeft = scrollLeft - walk;
-  console.log(walk);
 });
 
 window.addEventListener("wheel", (evt) => {
@@ -284,7 +289,6 @@ function checkEndGame() {
     //if not calling game over
     gameOver();
   } else {
-    console.log("check");
   }
 }
 
@@ -295,11 +299,25 @@ function gameOver() {
   let canvas = document.querySelector("canvas");
   canvas.classList.remove("hidden");
 
+  const xhr = new XMLHttpRequest();
+  xhr.open("post", "http://localhost/herStoryGame/scores.php");
+  const fd = new FormData();
+  fd.append("userID", getCookie("userID"));
+  fd.append("score", score);
+  xhr.send(fd);
+
+  xhr.onload = ({ target }) => {
+    let scoreData = JSON.parse(target.responseText);
+    let finalScore = document.getElementById("finalScore");
+    finalScore.innerText = `${score}/${fullScore}\n ${
+      scoreData.numOfTims
+    }/${parseInt(scoreData.avarage)}`;
+  };
+
   if (gameEnd.classList.contains("hidden")) {
     gameEnd.classList.remove("hidden");
     overlay.classList.remove("hidden");
-    let finalScore = document.getElementById("finalScore");
-    finalScore.innerText = `${score}/${fullScore}`;
+
     let btnRestart = document.getElementById("restart");
     btnRestart.addEventListener("click", () => {});
   } else {
@@ -307,6 +325,11 @@ function gameOver() {
     overlay.classList.add("hidden");
   }
 }
+
+let restartBtn = document.getElementById("restart");
+restartBtn.addEventListener("click", () => {
+  restart();
+});
 
 //text to speech
 
@@ -350,7 +373,7 @@ function getCookie(cname) {
 function checkCookie() {
   let user = getCookie("username");
   if (user != "") {
-    openModal("Rébonjour " + user);
+    openModal("Rebonjour " + user);
   } else {
     myModal.show();
   }
@@ -384,9 +407,11 @@ function checkCookie() {
         fd.append("nickname", $("#formInputNickname").val());
         xhr.send(fd);
         xhr.onload = ({ target }) => {
-          if (target.responseText === "OK") {
+          let user = JSON.parse(target.responseText);
+          if (user.id != -1) {
             myModal.hide();
-            setCookie("username", $("#formInputname").val(), 2);
+            setCookie("username", $("#formInputNickname").val(), 2);
+            setCookie("userID", user.id, 2);
           } else {
           }
         };
@@ -419,10 +444,20 @@ $(document).ready(function () {
       },
       1300,
       function () {
-        console.log("finished first animation");
         $(this).css("left", windowLeft + "px");
         $(this).animate({ left: startLeft }, 1300);
       }
     );
   });
 });
+
+//restart
+
+function restart() {
+  document.querySelector("canvas").classList.add("hidden");
+  stopFire();
+  closeModal();
+  init();
+}
+
+init();
