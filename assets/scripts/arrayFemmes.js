@@ -44,7 +44,7 @@ let femmes = [
     img: "hatchepsut.png",
     nom: "Hatchepsout",
     phrase: "une reine de l'Égypte antique qui deviendra pharaon",
-    dateNaissance: "1/1/1000",
+    dateNaissance: "-1000",
     hint1:
       " Sa momie a été retrouvée dans la Vallée des Rois par Howard Carter en 1903",
     hint2:

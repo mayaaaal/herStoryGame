@@ -417,6 +417,11 @@ img#pulp {
   z-index: 7;
 }
 
+/* img#pulp:hover {
+  filter: drop-shadow(2px 4px 6px white);
+  
+} */
+
 img#pulp.speech {
   animation: pulpSpeech 0.3s linear forwards;
   animation-iteration-count: 1;

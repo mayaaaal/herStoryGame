@@ -328,8 +328,24 @@ function gameOver() {
   }
 }
 
+let logoutBtn = document.getElementById("logOut");
+logoutBtn.addEventListener("click", ()=>{
+  logOut();
+})
+
+let logOut= function(){
+  const xhr = new XMLHttpRequest();
+  xhr.open("post", "http://localhost/herStoryGame/logout.php");
+  restart();
+
+}
+
 let restartBtn = document.getElementById("restart");
 restartBtn.addEventListener("click", () => {
+  restart();
+});
+let startBtn = document.getElementById("startGame");
+startBtn.addEventListener("click", () => {
   restart();
 });
 
@@ -384,9 +400,10 @@ function checkCookie() {
   if (user != "") {
     openModal("Rebonjour " + user);
   } else {
-     myModal.show();
+    // myModal.show();
   }
 }
+
 
 //check form
 
