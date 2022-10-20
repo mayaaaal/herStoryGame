@@ -191,7 +191,7 @@ function getDragAfterElement(container, X) {
 
 const modal = document.querySelector(".speechBubble");
 const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".close-speechBubble");
+const btnCloseModal = document.querySelectorAll(".close-speechBubble");
 
 const openModal = function (msg) {
   pulp.classList.remove("stopSpeech");
@@ -205,23 +205,28 @@ const openModal = function (msg) {
 const closeModal = function () {
   if (
     pulp.classList.contains("speech") ||
-    !gameEnd.classList.contains("hidden")
+    !gameEnd.classList.contains("hidden") ||
+    !bienVenue.classList.contains("hidden")
   ) {
     pulp.classList.remove("speech");
     pulp.classList.add("stopSpeech");
     gameEnd.classList.add("hidden");
+    bienVenue.classList.add("hidden");
   }
 
   modal.classList.add("hidden");
   bibli.classList.add("hidden");
   gameEnd.classList.add("hidden");
+  bienVenue.classList.add("hidden");
   overlay.classList.add("hidden");
 };
 
 overlay.addEventListener("click", () => {
   closeModal();
 });
-btnCloseModal.addEventListener("click", closeModal);
+for (let index = 0; index < btnCloseModal.length; index++) {
+  btnCloseModal[index].addEventListener("click", closeModal);
+}
 
 document.addEventListener("keydown", function (e) {
   if (
@@ -317,9 +322,6 @@ function gameOver() {
   if (gameEnd.classList.contains("hidden")) {
     gameEnd.classList.remove("hidden");
     overlay.classList.remove("hidden");
-
-    let btnRestart = document.getElementById("restart");
-    btnRestart.addEventListener("click", () => {});
   } else {
     gameEnd.classList.add("hidden");
     overlay.classList.add("hidden");
@@ -333,19 +335,26 @@ restartBtn.addEventListener("click", () => {
 
 //text to speech
 
-let speech = new SpeechSynthesisUtterance();
-speech.lang = "fr";
+let speechFunction = function () {
+  let speech = new SpeechSynthesisUtterance();
+  speech.lang = "fr";
 
-document.querySelector("#talk").addEventListener("click", (e) => {
-  e.preventDefault();
-  speech.text = document.querySelector(".message").innerText;
-  if (speechSynthesis.speak) {
-    speechSynthesis.cancel();
+  let speekBtn = document.querySelectorAll("#talk");
+  for (let index = 0; index < speekBtn.length; index++) {
+    speekBtn[index].addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      speech.text = document.querySelector(".message").innerText;
+      if (speechSynthesis.speak) {
+        speechSynthesis.cancel();
+      }
+      if (!speechSynthesis.pending || !speechSynthesis.speaking) {
+        window.speechSynthesis.speak(speech);
+      }
+    });
   }
-  if (!speechSynthesis.pending || !speechSynthesis.speaking) {
-    window.speechSynthesis.speak(speech);
-  }
-});
+};
+speechFunction();
 
 //userName cookie
 function setCookie(cname, cvalue, exdays) {
@@ -412,7 +421,17 @@ function checkCookie() {
             myModal.hide();
             setCookie("username", $("#formInputNickname").val(), 2);
             setCookie("userID", user.id, 2);
-          } else {
+            let bienVenue = document.getElementById("bienVenue");
+            if (bienVenue.classList.contains("hidden")) {
+              bienVenue.classList.remove("hidden");
+              overlay.classList.remove("hidden");
+
+              let btnStartGame = document.getElementById("startGame");
+              btnStartGame.addEventListener("click", () => {});
+            } else {
+              bienVenue.classList.add("hidden");
+              overlay.classList.add("hidden");
+            }
           }
         };
       },

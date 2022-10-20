@@ -241,8 +241,6 @@ p {
   font-weight: bold;
 }
 
-
-
 .carte img {
   width: 100%;
 
@@ -331,21 +329,20 @@ p {
   display: none;
 }
 
-
 .speechBubble {
   position: absolute;
   top: 50%;
   left: 70%;
   transform: translate(-50%, -50%);
   width: 40%;
-  background-color: #f6e7d7;;
+  background-color: #f6e7d7;
   padding: 6rem;
   border-radius: 100px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
 
-.speechBubble p{
+.speechBubble p {
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -457,9 +454,9 @@ img#pulp.stopSpeech {
   }
 }
 
-header{
+header {
   position: absolute;
-    top: 0;
+  top: 0;
 }
 
 header h2 {
@@ -518,8 +515,7 @@ header h2 {
   top: 26px;
 }
 
-
-#endGame {
+.popUp {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -536,29 +532,22 @@ header h2 {
   z-index: 10;
 }
 
-#endGame.hidden {
+.popUp.hidden {
   display: none;
 }
 
-button#talk{
+button#talk {
   border: none;
   background: transparent;
   width: 50px;
   height: 50px;
-  
 }
 
-
-button#talk svg{
-
+button#talk svg {
   width: 65px;
   height: 65px;
-
 }
 
-button#talk svg:hover{
-fill: darkorchid;
-
+button#talk svg:hover {
+  fill: darkorchid;
 }
-
-

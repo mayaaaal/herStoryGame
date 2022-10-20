@@ -194,8 +194,7 @@ let femmes = [
       "elle a été nommée messagère de la paix par le secrétaire général de l'ONU",
     bibli:
       "Jane Goodall, née le 3 avril 1934 à Londres, en Angleterre, est une pionnière dans les recherches sur les rapports humain-animal et s'investit depuis toute petite dans la préservation de la vie animale sauvage d'Afrique. D'une petite fille rêveuse, Jane a grandi pour devenir une scientifique aventurière doublée d'une activiste. Elle est aujourd'hui primatologue, anthroplogue et éthologue reconnue à travers le monde entier. Elle a reçu de nombreuses distinctions et a été la première scientifique à avoir observé que les chimpanzés utilisent des outils pour s'alimenter.",
-  },
-
+  },*/
   {
     id: "16",
     img: "mariamontessori.png",
