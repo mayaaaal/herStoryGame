@@ -329,16 +329,15 @@ function gameOver() {
 }
 
 let logoutBtn = document.getElementById("logOut");
-logoutBtn.addEventListener("click", ()=>{
+logoutBtn.addEventListener("click", () => {
   logOut();
-})
+});
 
-let logOut= function(){
-  const xhr = new XMLHttpRequest();
-  xhr.open("post", "http://localhost/herStoryGame/logout.php");
+let logOut = function () {
+  setCookie("username", "", -1);
   restart();
-
-}
+  myModal.show();
+};
 
 let restartBtn = document.getElementById("restart");
 restartBtn.addEventListener("click", () => {
@@ -400,10 +399,9 @@ function checkCookie() {
   if (user != "") {
     openModal("Rebonjour " + user);
   } else {
-    // myModal.show();
+    myModal.show();
   }
 }
-
 
 //check form
 
@@ -442,6 +440,9 @@ function checkCookie() {
             if (bienVenue.classList.contains("hidden")) {
               bienVenue.classList.remove("hidden");
               overlay.classList.remove("hidden");
+              document.querySelector("div.text").innerText = `Bonjour ${$(
+                "#formInputNickname"
+              ).val()},\n bienvenue au "herStoryGame" le jeu pour conaitre les femmes qui ont changé l'histoire`;
 
               let btnStartGame = document.getElementById("startGame");
               btnStartGame.addEventListener("click", () => {});

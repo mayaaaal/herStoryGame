@@ -27,6 +27,13 @@
   border-radius: 30px;
   box-shadow: 0 3rem 5rem rgb(0 0 0 / 30%);
   z-index: 10;
+  background-image: url(../images/pulpette.png), url(../images/Group\ 320.png);
+  background-repeat: no-repeat;
+  background-size: cover, 110%;
+  background-position-x: -441px;
+  background-position-y: -86px;
+
+  background-position: -441px -86px, 376px 311px;
 }
 
 #bibli.hidden {

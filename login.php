@@ -7,7 +7,7 @@
   $nickname = $_POST['nickname'];
 
   
-  $pdo = new PDO("mysql:host=localhost;dbname=login", "root", "root");
+  $pdo = new PDO("mysql:host=localhost;dbname=login", "root", "");
   $statement = $pdo->prepare("SELECT * FROM User WHERE name = ? AND nickname = ?");
   $statement->execute([
     $name, $nickname
