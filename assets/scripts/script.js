@@ -355,7 +355,7 @@ let speechFunction = function () {
   let speech = new SpeechSynthesisUtterance();
   speech.lang = "fr";
 
-  let speekBtn = document.querySelectorAll("#talk");
+  let speekBtn = document.querySelectorAll(".talk");
   for (let index = 0; index < speekBtn.length; index++) {
     speekBtn[index].addEventListener("click", (e) => {
       e.stopPropagation();
