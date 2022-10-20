@@ -384,7 +384,7 @@ function checkCookie() {
   if (user != "") {
     openModal("Rebonjour " + user);
   } else {
-    // myModal.show();
+     myModal.show();
   }
 }
 
