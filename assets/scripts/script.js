@@ -93,6 +93,8 @@ function handleCardDrop(target, draggable) {
   //logic of sorting card by chronologic order
 
   if (yearBefore === null || yearAfter === null) {
+    timeline.classList.add("bold");
+    document.querySelector("#line").classList.add("bold");
     // premier card
     if (
       //first card in the right place
@@ -131,6 +133,8 @@ function handleCardDrop(target, draggable) {
 function init() {
   score = 0;
   timeline.innerHTML = "";
+  timeline.classList.remove("bold");
+  document.querySelector("#line").classList.remove("bold");
 
   shuffle(femmes);
   for (let i = 0; i < femmes.length; i++) {
@@ -148,6 +152,8 @@ function init() {
     });
 
     draggable.addEventListener("dragend", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       let target = e.currentTarget;
       handleCardDrop(target, draggable);
     });

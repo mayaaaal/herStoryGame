@@ -15,6 +15,8 @@
   color: white;
 } */
 
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap");
+
 body {
   background-color: #f2f2f2;
   font-family: "RobotoDraft", "Roboto", sans-serif;
@@ -54,7 +56,7 @@ p {
 
 /* End Non-Essential  */
 
-.property-card {
+#mesCards .property-card {
   margin: 20px;
   height: 18em;
   width: 13.5em;
@@ -72,8 +74,11 @@ p {
   border-radius: 16px;
   overflow: hidden;
   -webkit-box-shadow: 5px 5px 7px #bb86fc70, -5px -5px 7px #bb86fc54;
-  box-shadow: 5px 5px 7px #bb86fc70, -5px -5px 7px #bb86fc54;
+  box-shadow: 3px 3px 5px #10100fab, 4px -4px 4px #1b1b1873;
   flex-shrink: 0;
+}
+#mesCards .property-card:hover {
+  filter: drop-shadow(-1px -1px 22px yellow);
 }
 
 .wrong .carte {
@@ -139,6 +144,20 @@ p {
 #timeLine .property-card {
   height: 14.4em;
   width: 10.8em;
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 /* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
@@ -213,8 +232,9 @@ p {
   content: "";
   position: absolute;
   left: 50%;
-  border-left: 1px solid yellow;
+  border-left: 3px solid yellow;
   height: 20px;
+  top: -1px;
 }
 
 #mesCards .draggable:first-child {
@@ -308,6 +328,10 @@ p {
   margin: auto;
 }
 
+#timeLine.bold {
+  border-top: 3px solid yellow;
+}
+
 #mesCards .property-card:hover img {
   height: 28em;
 }
@@ -331,8 +355,8 @@ p {
 
 .speechBubble {
   position: absolute;
-  top: 50%;
-  left: 70%;
+  top: 46%;
+  left: 66%;
   transform: translate(-50%, -50%);
   width: 40%;
   background-color: #f6e7d7;
@@ -471,6 +495,7 @@ header h2 {
   font-weight: bold;
   font-size: 38px;
   top: 0%;
+  font-family: "Fredoka One";
 }
 
 div.dateDiv {
@@ -482,6 +507,9 @@ div.dateDiv {
   position: absolute;
   top: -25px;
   color: yellow;
+  font-family: "Fredoka";
+  font-weight: bold;
+  font-size: 16px;
 }
 /* #timeLine::before {
   content: "";
@@ -502,6 +530,9 @@ div.dateDiv {
   width: 100%;
   top: 100px;
 }
+#line.bold {
+  border-top: 3px solid yellow;
+}
 
 canvas {
   cursor: crosshair;
@@ -513,11 +544,12 @@ canvas {
 
 header h2 {
   position: absolute;
-  color: rgb(255, 240, 254);
+  color: #f6e7d7;
   left: 26px;
   font-weight: bold;
   font-size: 38px;
   top: 26px;
+  font-family: "Fredoka";
 }
 
 .popUp {
