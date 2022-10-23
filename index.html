@@ -22,6 +22,7 @@
     />
     <link rel="stylesheet" href="./assets/css/bibliStyle.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
     
     <title>herStoryGame</title>
   </head>
@@ -35,7 +36,9 @@
         data-bs-toggle="modal"
         data-bs-target="#staticBackdrop"
         id="home"
-        ><h2>herStoryGame</h2></a
+        draggable="false"
+        >           <img src="./assets/images/logo.png" alt="" draggable="false"> 
+        </a
       >
     </header>
     <div id="container">
@@ -72,7 +75,10 @@
       
       <div id="bibli" class="bibli hidden">
         <button class="close-speechBubble">&times;</button>
-      
+        <div class="modal-header align-self-center">
+          <img id="logo" src="./assets/images/logo2.png" alt="">
+           
+         </div>
         <div class="deck">
       
         </div>
@@ -97,18 +103,22 @@
         class="backImg"
         src="assets/images/Group 312.png"
         alt=""
+        draggable="false"
       />
       <img
         id="img2"
         class="backImg"
         src="assets/images/Group 314.png"
         alt=""
+        draggable="false"
       />
 
       <img
       id="pulp" 
       class=' backImg'
-      src="assets/images/pulpette.png" width="120px" alt="">
+      src="assets/images/pulpette.png" width="120px" alt=""
+      draggable="false">
+      
 
   
       <img
@@ -116,51 +126,94 @@
         class="backImg"
         src="assets/images/Group 316.png"
         alt=""
+        draggable="false"
       />
       <img
         id="img4"
         class="backImg"
         src="assets/images/Group 318.png"
         alt=""
+        draggable="false"
       />
       <img
         id="img5"
         class="backImg"
         src="assets/images/Group 320.png"
         alt=""
+        draggable="false"
       />
       <img
         id="img6"
         class="backImg"
         src="assets/images/Group 323.png"
         alt=""
+        draggable="false"
       />
       <img
         id="img7"
         class="backImg"
         src="assets/images/Group 324.png"
         alt=""
+        draggable="false"
       />
 
       <div id="bienVenue" class="popUp hidden">
       
         <div class="box">
+          <button class="close-speechBubble">&times;</button>
           <div class="text"></div>
-          <img src="./assets/images/background.png" alt="" width="250px">
+          <video controls>
+            <source src="./assets/images/instructions.mp4" type="video/mp4">
+            <source src="./assets/images/instructions.mp4" type="video/webm">
+          
+          </video>
 
-          <button id="startGame">C'est parti</button>
+          <button id="startGame" class="btn btn-primary">C'est parti</button>
       
         </div>
       
       </div>
 
-      <div id="endGame" class="endGame popUp hidden">
+
+
+      <div
+      class="modal fade"
+      id="endGame"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered ">
+        <div class="modal-content">
+          <div class="modal-header align-self-center">
+            <img src="./assets/images/logo2.png" alt="">
+            
+          </div>
+          <div class="score"><p id="finalScore"></p></div>
+          
+          <div class="modal-footer">
+            <button id="restart" class="btn btn-primary">play again</button>
+            <button id="logOut" class="btn btn-primary">logOut</button>
+            <!-- data-bs-dismiss="modal" -->
+           
+             
+          </div>
+       
+        </div>
+      </div>
+    </div>
+
+      
+
+      <div id="endGame" class="endGame popUp modal-dialog modal-dialog-centered hidden">
       
         <div class="box">
           <div class="score"><p id="finalScore"></p></div>
 
-          <button id="restart">play again</button>
-          <button id="logOut">logOut</button>
+          <button id="restart" class="btn btn-primary">play again</button>
+          <button id="logOut" class="btn btn-primary">logOut</button>
       
         </div>
       
@@ -184,7 +237,7 @@
       <div class="modal-dialog modal-dialog-centered ">
         <div class="modal-content">
           <div class="modal-header align-self-center">
-            <h5 class="modal-title" id="staticBackdropLabel">herStoryGame</h5>
+           <img src="./assets/images/logo2.png" alt="">
             
           </div>
           <form class="needs-validation" action="login.php">
@@ -192,7 +245,7 @@
            
               <div class="col-auto">
                 <div class="mb-3">
-                  <label for="formInputname" class="form-label"> Comment tu t'appele?</label>
+                  <label for="formInputname" class="form-label">Entre ton nom </label>
                   <input
                     type="text"
                     class="form-control"
@@ -205,7 +258,7 @@
                   Comment tu t'appele?
                 </div>
                 <div class="mb-3">
-                  <label for="formGroupExampleInput2" class="form-label"> et ton nom imaginer?</label>
+                  <label for="formGroupExampleInput2" class="form-label"> Entre ton nom imaginer </label>
                   <input
                     type="text"
                     class="form-control"

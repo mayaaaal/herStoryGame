@@ -16,8 +16,7 @@ let femmes = [
     id: "2",
     img: "anne.png",
     nom: "Anne Frank",
-    phrase:
-      "Une adolescente allemande connue pour avoir écrit un journal intime",
+    phrase: "Connue pour avoir écrit un journal intime",
     dateNaissance: "06/12/1929",
     hint1:
       "le livre Le Journal d'Anne Frank écrit pendant les deux années où elle vivait cachée avec sa famille à Amsterdam aux Pays-Bas, sous occupation allemande",
@@ -51,6 +50,7 @@ let femmes = [
       "Hatchepsout est la fille du pharaon Thoutmosis Ier et de la reine Ahmès",
     bibli:
       "Hatchepsout est une femme-pharaon de la XVIIIe dynastie. Elle est principalement connue pour être une des seules femmes à avoir occupé cette fonction. Elle a régné aux alentours de -1479 à -1457 ou, selon d'autres historiens, de - 1498 à -14831. Hatchepsout est la fille du pharaon Thoutmosis Ier et de la reine Ahmès. Elle épouse son demi-frère, le pharaon Thoutmosis II. Elle monte sur le trône à la mort de son mari, En fait, elle règne avec le fils de ce dernier, Thoutmôsis III, alors trop jeune pour diriger seul le royaume.Elle a notamment construit son temple avec de magnifiques statues et colonnades sur les terrasses. 120 sphinx gardent l'entrée du temple. Sa momie a été retrouvée dans la Vallée des Rois par Howard Carter en 1903, puis a été identifiée en 2007. Elle repose au Musée du Caire. ",
+    displayYear: "-1479",
   },
   {
     id: "5",
@@ -60,7 +60,8 @@ let femmes = [
     dateNaissance: "01/01/1530",
     hint1:
       "Grace O'Malley est un personnage du folklore irlandais qui a réellement existé, une femme pirate que les enfants adorent !",
-    hint2: "",
+    hint2:
+      "A cette époque Irlande dirigée par le roi d’Angleterre Henri VIII mais laissée sous le contrôle des princes et seigneurs irlandais.",
     bibli:
       "Reine du royaume d'Umaill en Irlande, Grace O'Malley (vers 1530 - vers 1603) est une femme pirate et une figure historique irlandaise. Dès son plus jeune âge, et à l'encontre des coutumes de l'époque, elle passe son temps sur les bateaux avec son père. En 1546, Grace O'Malley est mariée à Donal O'Flaherty, héritier et futur roi de Connacht. Ils auront trois enfants : Owen, Margaret et Murrough. Avec son mari, Grace se lance dans le commerce et la navigation. Des plaintes rapportent alors que leurs bateaux se comportent comme des pirates, imposant par la force des taxes de passage. Finalement, Donal est tué à la bataille et Grace gagne le respect de ses hommes et de ses adversaires en défendant le château de Donal contre des envahisseurs irlandais puis anglais, malgré une infériorité numérique. ",
   },
@@ -69,8 +70,7 @@ let femmes = [
     id: "6",
     img: "njinga.png",
     nom: "Njinga du Ndongo",
-    phrase:
-      " reine du royaume de Ndongo et du royaume de Matamba dans l'actuel Angola",
+    phrase: " reine du royaume dans l'actuel Angola",
     dateNaissance: "01/01/1583 ",
     hint1:
       "Njinga de Ndongo est probablement l'une des reines les plus connues de l'histoire de l'Afrique",
@@ -155,6 +155,7 @@ let femmes = [
       "Comme les poètes de l'époque, elle est également musicienne et joue de la lyre.",
     bibli:
       "Sapphô est une poétesse grecque de l'Antiquité qui a vécu aux VIIème siècle et VIème siècle avant JC à Mytilène, sur l'île de Lesbos. Sapphô est connue pour sa poésie amoureuse lyrique, mais elle a également écrit des vers politiques. Comme les poètes de l'époque, elle est également musicienne et joue de la lyre.",
+    displayYear: "-630",
   },
 
   {
@@ -164,8 +165,9 @@ let femmes = [
     phrase: "une artiste peintre mexicaine",
     dateNaissance: "07/06/1907 ",
     hint1:
-      "Frida Kahlo est l'une des trente-cinq premières filles admises sur un total de 2 000 élèves. ",
-    hint2: "hint2",
+      "Sensible à la cause de l’émancipation des femmes, Frida Kahlo s’inscrit au Parti communiste mexicain. ",
+    hint2:
+      "Frida Kahlo présente ses œuvres à New York puis à Paris où elle rencontre Picasso et Kandinsky.",
     bibli:
       "Elle est née en 1907 à Coyoacán au Mexique. À l'âge de 6 ans, elle est malade de la polio ce qui la laisse handicapée. Elle commence à étudier la médecine mais elle est victime d'un accident de la circulation et garde de grandes douleurs. Sa famille aménage un lit à baldaquin avec un miroir accroché à l'horizontale car elle est immobilisée dans son lit et commence à peindre. Grâce à ceci Frida Kahlo a pu peindre 55 autoportraits sur 143 tableaux. Ses tableaux montrent sa douleur et la vie difficile des femmes, en particulier ses regrets de ne pas pouvoir être mère. Elle épouse Diego Rivera en 1929, mais ils ont chacun de leur côté des aventures amoureuses. Tous deux sont membres du Parti communiste mexicain. Elle décède en 1954 des suites d'une embolie pulmonaire.",
   },

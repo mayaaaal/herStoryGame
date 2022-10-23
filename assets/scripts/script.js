@@ -24,7 +24,7 @@ function shuffle(array) {
 
 function CreerCard(femmes, index) {
   let date = new Date(femmes.dateNaissance);
-  let year = date.getFullYear();
+  let year = femmes.displayYear ? femmes.displayYear : date.getFullYear();
   const folder = "assets/images/";
 
   $("#mesCards").append(`
@@ -121,8 +121,8 @@ function handleCardDrop(target, draggable) {
     draggable.classList.remove("dragging", "wrong");
     draggable.classList.add("right");
     tries = 0;
-    checkEndGame();
     score += 1;
+    checkEndGame();
   } else {
     draggable.classList.remove("right");
     triesHandler(draggable);
@@ -133,6 +133,7 @@ function handleCardDrop(target, draggable) {
 function init() {
   score = 0;
   timeline.innerHTML = "";
+  mesCards.innerHTML = "";
   timeline.classList.remove("bold");
   document.querySelector("#line").classList.remove("bold");
 
@@ -199,13 +200,18 @@ const modal = document.querySelector(".speechBubble");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelectorAll(".close-speechBubble");
 
-const openModal = function (msg) {
+const openModal = function (msg, buli) {
   pulp.classList.remove("stopSpeech");
   pulp.classList.add("speech");
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
   const message = document.querySelector(".message");
   message.innerText = msg;
+  if (buli) {
+    modal.classList.add("rebonjour");
+  } else {
+    modal.classList.remove("rebonjour");
+  }
 };
 
 const closeModal = function () {
@@ -252,7 +258,7 @@ function triesHandler(card) {
 
     let hint = tries < 2 ? femmes[index].hint1 : femmes[index].hint2;
     document.getElementById("mesCards").prepend(card);
-    openModal(hint);
+    openModal(hint, false);
   } else {
     document.querySelector(".lost").prepend(card);
     tries = 0;
@@ -305,6 +311,10 @@ function checkEndGame() {
 
 //end of the game - fireworks modal of end of the game with final score and play agin button
 
+let myendGameModal = new bootstrap.Modal(document.getElementById("endGame"), {
+  keyboard: false,
+});
+
 function gameOver() {
   fire();
   let canvas = document.querySelector("canvas");
@@ -320,18 +330,14 @@ function gameOver() {
   xhr.onload = ({ target }) => {
     let scoreData = JSON.parse(target.responseText);
     let finalScore = document.getElementById("finalScore");
-    finalScore.innerText = `${score}/${fullScore}\n ${
+    finalScore.innerHTML = `<p>Bien Joué ${getCookie(
+      "username"
+    )}, </p>\n <P>Ton note finale est ${score}/${fullScore}.</P> \n <p>Tu as joué ${
       scoreData.numOfTims
-    }/${parseInt(scoreData.avarage)}`;
+    } fois.</p> \n<p> Ton note moyen est ${parseInt(scoreData.avarage)}.</p>`;
   };
 
-  if (gameEnd.classList.contains("hidden")) {
-    gameEnd.classList.remove("hidden");
-    overlay.classList.remove("hidden");
-  } else {
-    gameEnd.classList.add("hidden");
-    overlay.classList.add("hidden");
-  }
+  myendGameModal.show();
 }
 
 let logoutBtn = document.getElementById("logOut");
@@ -342,11 +348,13 @@ logoutBtn.addEventListener("click", () => {
 let logOut = function () {
   setCookie("username", "", -1);
   restart();
+  myendGameModal.hide();
   myModal.show();
 };
 
 let restartBtn = document.getElementById("restart");
 restartBtn.addEventListener("click", () => {
+  myendGameModal.hide();
   restart();
 });
 let startBtn = document.getElementById("startGame");
@@ -403,7 +411,7 @@ function getCookie(cname) {
 function checkCookie() {
   let user = getCookie("username");
   if (user != "") {
-    openModal("Rebonjour " + user);
+    openModal("Rebonjour " + user, true);
   } else {
     myModal.show();
   }
@@ -442,19 +450,27 @@ function checkCookie() {
             myModal.hide();
             setCookie("username", $("#formInputNickname").val(), 2);
             setCookie("userID", user.id, 2);
-            let bienVenue = document.getElementById("bienVenue");
-            if (bienVenue.classList.contains("hidden")) {
-              bienVenue.classList.remove("hidden");
-              overlay.classList.remove("hidden");
-              document.querySelector("div.text").innerText = `Bonjour ${$(
-                "#formInputNickname"
-              ).val()},\n bienvenue au "herStoryGame" le jeu pour conaitre les femmes qui ont changé l'histoire`;
 
-              let btnStartGame = document.getElementById("startGame");
-              btnStartGame.addEventListener("click", () => {});
+            if (user.newUser) {
+              let bienVenue = document.getElementById("bienVenue");
+              if (bienVenue.classList.contains("hidden")) {
+                bienVenue.classList.remove("hidden");
+                overlay.classList.remove("hidden");
+                document.querySelector("div.text").innerHTML = `<h3>Bonjour ${$(
+                  "#formInputNickname"
+                ).val()},</h3>\n <p>Bienvenue au "herStoryGame" le jeu pour conaitre les femmes qui ont changé l'histoire.</p>\n<p>Ce jeu se propose de dater les grandes femmes de l'histoire. Plus exactement de les positionner dans le temps par rapport à d'autres.</p>`;
+
+                let btnStartGame = document.getElementById("startGame");
+                btnStartGame.addEventListener("click", () => {});
+              } else {
+                bienVenue.classList.add("hidden");
+                overlay.classList.add("hidden");
+              }
             } else {
-              bienVenue.classList.add("hidden");
-              overlay.classList.add("hidden");
+              document
+                .querySelector(".speechBubble")
+                .classList.add("rebonjour");
+              openModal("Rebonjour " + user.nickname, true);
             }
           }
         };

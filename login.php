@@ -26,7 +26,10 @@
       $statement->execute([ $lastId ]);
 
       $result = $statement->fetch(PDO::FETCH_OBJ);
+      $result->newUser = true;
     }
+  }else{
+    $result->newUser = false;
   }
   echo json_encode($result);
 ?>

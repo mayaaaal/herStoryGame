@@ -3,7 +3,7 @@
   top: 1.2rem;
   right: 2rem;
   font-size: 5rem;
-  color: #333;
+  color: #4d0e67;
   cursor: pointer;
   border: none;
   background: none;
@@ -257,8 +257,20 @@ h4 {
   margin: auto;
 }
 
-#bibli button#talk svg {
-  bottom: 8%;
+#bibli button.talk {
+  top: 6%;
   position: absolute;
-  left: 8%;
+  right: 8%;
+  border: none;
+  background: none;
+  transform: scale(1.5);
+  color: #4d0e67;
+}
+
+#bibli #logo{
+  position: absolute;
+    top: 5%;
+    /* margin: auto; */
+    left: 28%;
+    /* right: 50%;
 }
