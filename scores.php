@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 $userID = $_POST['userID'];
 $score = $_POST['score'];
 
-$pdo = new PDO("mysql:host=localhost;dbname=login", "root", "");
+$pdo = new PDO("mysql:host=localhost;dbname=login", "root", "root");
 $statement = $pdo->prepare("INSERT INTO scores (id_user, score, date) VALUES (?,?, NOW())");
 $ok= $statement->execute([
     $userID, $score

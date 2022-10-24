@@ -616,16 +616,10 @@ button.talk {
   height: 50px;
 }
 
-<<<<<<< HEAD
-button.talk svg {
-  width: 65px;
-  height: 65px;
-=======
 button#talk svg {
   width: 55px;
   height: 55px;
   color: #4d0e67;
->>>>>>> 1ed57e7a9c838a853dbdd3fe53d5433530f1e7e8
 }
 
 
@@ -728,3 +722,4 @@ div.text h3 {
 .speechBubble.rebonjour p {
   font-size: 1.5rem;
  
+}
