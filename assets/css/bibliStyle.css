@@ -3,7 +3,7 @@
   top: 1.2rem;
   right: 2rem;
   font-size: 5rem;
-  color: #333;
+  color: #4d0e67;
   cursor: pointer;
   border: none;
   background: none;
@@ -27,6 +27,13 @@
   border-radius: 30px;
   box-shadow: 0 3rem 5rem rgb(0 0 0 / 30%);
   z-index: 10;
+  background-image: url(../images/pulpette.png), url(../images/Group\ 320.png);
+  background-repeat: no-repeat;
+  background-size: cover, 110%;
+  background-position-x: -441px;
+  background-position-y: -86px;
+
+  background-position: -441px -86px, 376px 311px;
 }
 
 #bibli.hidden {
@@ -250,8 +257,20 @@ h4 {
   margin: auto;
 }
 
-#bibli button#talk svg {
-  bottom: 8%;
+#bibli button.talk {
+  top: 6%;
   position: absolute;
-  left: 8%;
+  right: 8%;
+  border: none;
+  background: none;
+  transform: scale(1.5);
+  color: #4d0e67;
+}
+
+#bibli #logo{
+  position: absolute;
+    top: 5%;
+    /* margin: auto; */
+    left: 28%;
+    /* right: 50%;
 }
